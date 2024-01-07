@@ -325,6 +325,23 @@ public sealed class BuildAndPatch : FrostingTask<BuildContext>;
 [TaskName("DeployDepsUnity")]
 public sealed class DeployDepsToUnity : FrostingTask<BuildContext>
 {
+    public override bool ShouldRun(BuildContext context)
+    {
+        AbsolutePath unityPkgDir = context.UnityDir / "Packages";
+        AbsolutePath destDir = unityPkgDir / context.Project.Name;
+
+        if (!destDir.DirExists())
+            return true;
+        
+        AbsolutePath destBepInExDll = destDir / "BepInEx.dll";
+        AbsolutePath destHarmonyDll = destDir / "0Harmony.dll";
+
+        if (!File.Exists(destBepInExDll) || !File.Exists(destHarmonyDll))
+            return true;
+
+        return false;
+    }
+
     public override void Run(BuildContext context)
     {
         AbsolutePath bepInExDll = context.GameDir! / "BepInEx" / "core" / "BepInEx.dll";
