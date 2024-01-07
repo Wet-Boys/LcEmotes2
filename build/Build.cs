@@ -252,9 +252,10 @@ public sealed class UpdateAssetBundles : FrostingTask<BuildContext>
             context.Log.Warning($"Could not find `{context.UnityAssetBundlesDir}`!");
             return;
         }
+        // TODO set up asset bundle loading!
         
-        context.UnityAssetBundlesDir.GlobFiles("customemotes-ui")
-            .CopyFilesTo(context.Project.Directory);
+        // context.UnityAssetBundlesDir.GlobFiles("")
+        //     .CopyFilesTo(context.Project.Directory);
     }
 }
 

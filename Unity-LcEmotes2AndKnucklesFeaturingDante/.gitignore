@@ -78,3 +78,6 @@ crashlytics-build.properties
 
 /[Aa]ssets/TextMesh Pro.meta
 /[Pp]roject[Ss]ettings/Packages/*
+/[Pp]ackages/[Ll]ethal [Cc]ompany/
+/[Aa]sset[Bb]undles/[Ss]tandalone[Ww]indows/[Ss]tandalone[Ww]indows
+/[Aa]sset[Bb]undles/[Ss]tandalone[Ww]indows/[Ss]tandalone[Ww]indows.manifest
