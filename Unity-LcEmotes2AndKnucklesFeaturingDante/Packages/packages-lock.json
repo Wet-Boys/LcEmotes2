@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.gemumoddo.lc_emotes2_and_knuckles_featuring_dante": {
+      "version": "file:LcEmotes2AndKnucklesFeaturingDante",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.burst": {
       "version": "1.8.8",
       "depth": 1,

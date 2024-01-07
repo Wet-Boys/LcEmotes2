@@ -31,7 +31,11 @@ public class AbsolutePath
             .Select(x => (AbsolutePath) x)
             .ToList();
     }
-    
+
+    public bool DirExists() => Directory.Exists(this);
+
+    public override string ToString() => this;
+
     public static implicit operator AbsolutePath(string path) => new(path);
     public static implicit operator AbsolutePath(FilePath path) => new(path.FullPath);
     public static implicit operator AbsolutePath(DirectoryPath path) => new(path.FullPath);

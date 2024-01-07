@@ -6,6 +6,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Text.Json;
 using System.Text.RegularExpressions;
+using BepInEx.AssemblyPublicizer;
 using build.Utils;
 using Cake.Common;
 using Cake.Common.IO;
@@ -68,8 +69,8 @@ public class BuildContext : FrostingContext
     public readonly AbsolutePath StubbedLibsDir = new AbsolutePath("../") / "libs";
     public readonly AbsolutePath StubbedFilesPath = new AbsolutePath("../") / "libs" / "stubbed-files.zip";
     public AbsolutePath BuildDir { get; }
-    public AbsolutePath UiBuildDir { get; }
-    public AbsolutePath UiUnityAssetBundlesDir { get; }
+    public AbsolutePath UnityDir { get; }
+    public AbsolutePath UnityAssetBundlesDir { get; }
 
     public BuildContext(ICakeContext context) : base(context)
     {
@@ -112,8 +113,8 @@ public class BuildContext : FrostingContext
         }
 
         BuildDir = Project.Directory / "bin" / MsBuildConfiguration / "netstandard2.1";
-
-        UiUnityAssetBundlesDir = (AbsolutePath)"../" / settings.UnityDir / "AssetBundles" / "StandaloneWindows";
+        UnityDir = (AbsolutePath)"../" / settings.UnityDir;
+        UnityAssetBundlesDir = UnityDir / "AssetBundles" / "StandaloneWindows";
     }
 
     private AbsolutePath? GetGameDirArg(ICakeContext context)
@@ -246,7 +247,13 @@ public sealed class UpdateAssetBundles : FrostingTask<BuildContext>
 {
     public override void Run(BuildContext context)
     {
-        context.UiUnityAssetBundlesDir.GlobFiles("customemotes-ui")
+        if (!context.UnityAssetBundlesDir.DirExists())
+        {
+            context.Log.Warning($"Could not find `{context.UnityAssetBundlesDir}`!");
+            return;
+        }
+        
+        context.UnityAssetBundlesDir.GlobFiles("customemotes-ui")
             .CopyFilesTo(context.Project.Directory);
     }
 }
@@ -315,20 +322,48 @@ public sealed class PatchNetcode : FrostingTask<BuildContext>
 [IsDependentOn(typeof(PatchNetcode))]
 public sealed class BuildAndPatch : FrostingTask<BuildContext>;
 
+[TaskName("DeployDepsUnity")]
+public sealed class DeployDepsToUnity : FrostingTask<BuildContext>
+{
+    public override void Run(BuildContext context)
+    {
+        AbsolutePath bepInExDll = context.GameDir! / "BepInEx" / "core" / "BepInEx.dll";
+        AbsolutePath harmonyDll = context.GameDir! / "BepInEx" / "core" / "0Harmony.dll";
+        
+        AbsolutePath unityPkgDir = context.UnityDir / "Packages";
+        AbsolutePath destDir = unityPkgDir / context.Project.Name;
+        
+        if (!Directory.Exists(destDir))
+            Directory.CreateDirectory(destDir);
+
+        AbsolutePath destBepInExDll = destDir / bepInExDll.Name;
+        AbsolutePath destHarmonyDll = destDir / harmonyDll.Name;
+
+        var options = new AssemblyPublicizerOptions
+        {
+            Strip = true,
+            IncludeOriginalAttributesAttribute = false
+        };
+        AssemblyPublicizer.Publicize(bepInExDll, destBepInExDll, options);
+        AssemblyPublicizer.Publicize(harmonyDll, destHarmonyDll, options);
+    }
+}
+
 [TaskName("DeployUnity")]
 [IsDependentOn(typeof(BuildTask))]
+[IsDependentOn(typeof(DeployDepsToUnity))]
 public sealed class DeployToUnity : FrostingTask<BuildContext>
 {
     public override void Run(BuildContext context)
     {
-        AbsolutePath unityPkgDir = (AbsolutePath)"../" / "Unity-LethalEmotesApi-UI" / "Packages";
+        AbsolutePath unityPkgDir = context.UnityDir / "Packages";
         
         AbsolutePath destDir = unityPkgDir / context.Project.Name;
 
         if (!Directory.Exists(destDir))
             Directory.CreateDirectory(destDir);
             
-        context.UiBuildDir.GlobFiles("*.dll", "*.pdb")
+        context.BuildDir.GlobFiles("*.dll", "*.pdb")
             .CopyFilesTo(destDir);
         
         AbsolutePath packageFile = destDir / "package.json";
