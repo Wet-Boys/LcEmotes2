@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LcEmotes2AndKnucklesFeaturingDante", "LcEmotes2AndKnucklesFeaturingDante\LcEmotes2AndKnucklesFeaturingDante.csproj", "{477D1E91-AA4F-4EBD-B200-8E647823E06A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Build", "build\Build.csproj", "{46BF4AA5-227F-4CA8-893F-2FBB9A0E97FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C126025D-A702-4C8C-840F-85F8AD98A91D}"
+	ProjectSection(SolutionItems) = preProject
+		build-settings.json = build-settings.json
+		build.cake = build.cake
+		build.ps1 = build.ps1
+		cake.config = cake.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{477D1E91-AA4F-4EBD-B200-8E647823E06A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{477D1E91-AA4F-4EBD-B200-8E647823E06A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{477D1E91-AA4F-4EBD-B200-8E647823E06A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{477D1E91-AA4F-4EBD-B200-8E647823E06A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46BF4AA5-227F-4CA8-893F-2FBB9A0E97FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46BF4AA5-227F-4CA8-893F-2FBB9A0E97FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal
