@@ -15,6 +15,12 @@
       },
       "hash": "703b7d6e36505b499650e6675fecf417f343acdf"
     },
+    "com.unity.2d.sprite": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
     "com.unity.assetbundlebrowser": {
       "version": "https://github.com/Unity-Technologies/AssetBundles-Browser.git",
       "depth": 0,
