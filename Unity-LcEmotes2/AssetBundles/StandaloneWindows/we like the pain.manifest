@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 887080847
+CRC: 2300869180
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c5662a9d2c49c698e2f9c18f99dc5574
+    Hash: 53b5641ff9f81c0b4a72ba3275acb178
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 47250a2906597fa760a33e23afe36dbf
+    Hash: d74c525b0ec34a04e1a29117f8083815
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: c5662a9d2c49c698e2f9c18f99dc5574
+    Hash: 53b5641ff9f81c0b4a72ba3275acb178
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -37,23 +37,23 @@ ClassTypes:
 - Class: 95
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: d21dcc2386d650c4597f3633c75a1f98, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 8b22792c3b570444eb18cb78c2af3a74, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+  Script: {fileID: 46164097, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: d21dcc2386d650c4597f3633c75a1f98, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2a16748d9461eae46a725db9776d5390, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8b22792c3b570444eb18cb78c2af3a74, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 4f10dd60657c6004587f237a7e90f8e4, type: 3}
 - Class: 114
-  Script: {fileID: 46164097, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
+  Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -90,8 +90,6 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: Unity.Timeline
   ClassName: UnityEngine.Timeline.MarkerList
 - AssemblyName: Unity.Timeline
-  ClassName: UnityEngine.Timeline.SignalReceiver/EventKeyValue
-- AssemblyName: Unity.Timeline
   ClassName: UnityEngine.Timeline.TimelineAsset/EditorSettings
 - AssemblyName: Unity.Timeline
   ClassName: UnityEngine.Timeline.TimelineClip
@@ -108,6 +106,6 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
 Assets:
-- Assets/Emotes/GoblinPain/Scene.anim
+- Assets/Emotes/GoblinPain/Goblin Pain Emote Scav.anim
 - Assets/Emotes/GoblinPain/PainHolder.prefab
 Dependencies: []

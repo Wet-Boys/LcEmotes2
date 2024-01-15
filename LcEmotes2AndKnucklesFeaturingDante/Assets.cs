@@ -19,10 +19,10 @@ internal static class Assets
             var assetBundleName = assetBundle;
             
             if (assetBundleName.StartsWith(FsUtils.AssetBundlesDir))
-                assetBundleName = assetBundle[FsUtils.AssetBundlesDir.Length..];
+                assetBundleName = assetBundleName[FsUtils.AssetBundlesDir.Length..];
 
             while (assetBundleName.StartsWith("/") || assetBundleName.StartsWith("\\"))
-                assetBundleName = assetBundle[1..];
+                assetBundleName = assetBundleName[1..];
             
             AddBundle(assetBundleName);
         }

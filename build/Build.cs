@@ -426,20 +426,18 @@ public sealed class DeployToGame : FrostingTask<BuildContext>
     public override void Run(BuildContext context)
     {
         var project = context.Project;
+        var assetBundlesDir = context.BuildDir / "AssetBundles";
         
         foreach (var target in context.DeployTargets)
         {
             AbsolutePath destDir = target / project.Name;
-
-            if (!Directory.Exists(destDir))
-                Directory.CreateDirectory(destDir);
+            destDir.EnsureDirectoryExists();
             
             context.BuildDir.GlobFiles("*.dll", "*.pdb")
-                .ForEach(file =>
-                {
-                    var destFile = destDir / file.Name;
-                    File.Copy(file, destFile, true);
-                });
+                .CopyFilesTo(destDir);
+            
+            assetBundlesDir.GlobFiles("*")
+                .CopyFilesTo(destDir / "AssetBundles");
         }
     }
 }
