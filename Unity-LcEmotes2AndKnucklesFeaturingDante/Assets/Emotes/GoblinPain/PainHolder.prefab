@@ -234,7 +234,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6455061307550473896}
   - component: {fileID: 1039416467062352315}
-  - component: {fileID: 8249355018457302807}
   m_Layer: 0
   m_Name: Goblin Container
   m_TagString: Untagged
@@ -250,7 +249,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8214037093167169643}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -260,7 +259,7 @@ Transform:
   - {fileID: 37040420184959771}
   - {fileID: 3986017067362595558}
   m_Father: {fileID: 6452751582405747028}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1039416467062352315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,21 +278,6 @@ MonoBehaviour:
   - {fileID: 1397732736536178167}
   - {fileID: 4427068542966659628}
   timeBetweenPulse: 0.4615385
---- !u!114 &8249355018457302807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8214037093167169643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals: []
-    m_Events: []
 --- !u!1001 &620552216921958467
 PrefabInstance:
   m_ObjectHideFlags: 0
