@@ -48,7 +48,7 @@ public class FaceCameraProxy : MonoBehaviour
 
     private Camera? FindBestCamera()
     {
-        if (StartOfRound.Instance.localPlayerController is not null)
+        if (StartOfRound.Instance is not null && StartOfRound.Instance.localPlayerController is not null)
             return StartOfRound.Instance.localPlayerController.gameplayCamera;
         
         if (Camera.current is not null)
