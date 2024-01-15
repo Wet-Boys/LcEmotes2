@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain;
 

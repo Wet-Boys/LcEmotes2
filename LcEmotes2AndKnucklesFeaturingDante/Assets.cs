@@ -1,63 +1,67 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
+using LcEmotes2AndKnucklesFeaturingDante.Utils;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
-namespace LcEmotes2AndKnucklesFeaturingDante
+namespace LcEmotes2AndKnucklesFeaturingDante;
+
+internal static class Assets
 {
-    internal static class Assets
+    private static readonly List<AssetBundle> AssetBundles = [];
+    private static readonly Dictionary<string, int> AssetIndices = new();
+
+    public static void LoadAllAssetBundles()
     {
-        internal static readonly List<AssetBundle> AssetBundles = new List<AssetBundle>();
-        private static readonly Dictionary<string, int> AssetIndices = new Dictionary<string, int>();
-
-        internal static void LoadAssetBundlesFromFolder(string folderName)
+        foreach (var assetBundle in Directory.EnumerateFiles(FsUtils.AssetBundlesDir, "*", SearchOption.AllDirectories))
         {
-            folderName = Path.Combine(Path.GetDirectoryName(LcEmotes2AndKnucklesFeaturingDantePlugin.PInfo.Location), folderName);
-            foreach (var file in Directory.GetFiles(folderName))
-            {
-                AssetBundle assetBundle = AssetBundle.LoadFromFile(file);
+            var assetBundleName = assetBundle;
+            
+            if (assetBundleName.StartsWith(FsUtils.AssetBundlesDir))
+                assetBundleName = assetBundle[FsUtils.AssetBundlesDir.Length..];
 
-                int index = AssetBundles.Count;
-                AssetBundles.Add(assetBundle);
-
-                foreach (var assetName in assetBundle.GetAllAssetNames())
-                {
-                    string path = assetName.ToLowerInvariant();
-                    if (path.StartsWith("assets/"))
-                        path = path.Remove(0, "assets/".Length);
-
-                    //DebugClass.Log($"paring [{path}] with [{index}]");
-                    AssetIndices[path] = index;
-                }
-
-                DebugClass.Log($"Loaded AssetBundle: {Path.GetFileName(file)}");
-            }
+            while (assetBundleName.StartsWith("/") || assetBundleName.StartsWith("\\"))
+                assetBundleName = assetBundle[1..];
+            
+            AddBundle(assetBundleName);
         }
+    }
 
-        internal static T Load<T>(string assetName) where T : UnityEngine.Object
+    public static void AddBundle(string bundleName)
+    {
+        var assetBundleLoc = Path.Combine(FsUtils.AssetBundlesDir, bundleName);
+        AssetBundle assetBundle = AssetBundle.LoadFromFile(assetBundleLoc);
+
+        int index = AssetBundles.Count;
+        AssetBundles.Add(assetBundle);
+
+        foreach (var assetName in assetBundle.GetAllAssetNames())
         {
-            try
-            {
-                assetName = assetName.ToLowerInvariant();
-                if (assetName.Contains(":"))
-                {
-                    string[] path = assetName.Split(':');
+            var path = assetName.ToLowerInvariant();
+            
+            if (path.StartsWith("assets/"))
+                path = path["assets/".Length..];
 
-                    assetName = path[1].ToLowerInvariant();
-                }
-                if (assetName.StartsWith("assets/"))
-                    assetName = assetName.Remove(0, "assets/".Length);
-                int index = AssetIndices[assetName];
-                T asset = AssetBundles[index].LoadAsset<T>($"assets/{assetName}");
-                return asset;
-            }
-            catch (Exception e)
-            {
-                DebugClass.Log($"Couldn't load asset [{assetName}] reason: {e}");
-                return null;
-            }
+            AssetIndices[path] = index;
+        }
+    }
 
+    public static T? Load<T>(string assetName) where T : Object
+    {
+        try
+        {
+            assetName = assetName.ToLowerInvariant();
+            if (assetName.StartsWith("assets/"))
+                assetName = assetName["assets/".Length..];
+
+            int index = AssetIndices[assetName];
+            return AssetBundles[index].LoadAsset<T>($"assets/{assetName}");
+        }
+        catch (Exception e)
+        {
+            LcEmotes2AndKnucklesFeaturingDantePlugin.Logger?.LogError($"Couldn't load asset [{assetName}] exception: {e}");
+            return null;
         }
     }
 }
