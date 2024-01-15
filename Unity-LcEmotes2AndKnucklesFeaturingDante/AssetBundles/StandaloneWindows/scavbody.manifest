@@ -1,0 +1,40 @@
+ManifestFileVersion: 0
+CRC: 2872201406
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5c2e63bbe73498d036c48f78a90408e7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9a86897a40af6e6d0d9ec182311314cc
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 5c2e63bbe73498d036c48f78a90408e7
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/CustomStuff/scavEmoteSkeleton.prefab
+Dependencies:
+- G:/LcEmotes2AndKnucklesFeaturingDante/Unity-LcEmotes2AndKnucklesFeaturingDante/AssetBundles/StandaloneWindows/customemotespackage
+- G:/LcEmotes2AndKnucklesFeaturingDante/Unity-LcEmotes2AndKnucklesFeaturingDante/AssetBundles/StandaloneWindows/moisture_animationreplacements
