@@ -48,6 +48,7 @@ public class BuildContext : FrostingContext
     #region Settings
 
     public string[] References { get; }
+    public string[] AssetBundles { get; }
     public CSharpProject Project { get; }
     public string ManifestAuthor { get; }
     public string NetcodePatcherRelease { get; }
@@ -69,7 +70,6 @@ public class BuildContext : FrostingContext
     public AbsolutePath PatcherDir { get; }
     public readonly AbsolutePath StubbedLibsDir = new AbsolutePath("../") / "libs";
     public readonly AbsolutePath StubbedFilesPath = new AbsolutePath("../") / "libs" / "stubbed-files.zip";
-    public AbsolutePath LethalEmotesApiDir { get; }
     public AbsolutePath BuildDir { get; }
     public AbsolutePath UnityDir { get; }
     public AbsolutePath UnityAssetBundlesDir { get; }
@@ -94,6 +94,7 @@ public class BuildContext : FrostingContext
 
         var projectFilePath = (AbsolutePath)"../" / settings.ProjectFile;
         References = settings.References;
+        AssetBundles = settings.AssetBundles;
         Project = new CSharpProject(projectFilePath);
         ManifestAuthor = settings.ManifestAuthor;
         NetcodePatcherRelease = settings.NetcodePatcherRelease;
@@ -255,10 +256,12 @@ public sealed class UpdateAssetBundles : FrostingTask<BuildContext>
             context.Log.Warning($"Could not find `{context.UnityAssetBundlesDir}`!");
             return;
         }
-        // TODO set up asset bundle loading!
-        
-        // context.UnityAssetBundlesDir.GlobFiles("")
-        //     .CopyFilesTo(context.Project.Directory);
+
+        var projectAssetBundlesDir = context.Project.Directory / "AssetBundles";
+        projectAssetBundlesDir.EnsureDirectoryExists();
+
+        context.UnityAssetBundlesDir.GlobFiles(context.AssetBundles)
+            .CopyFilesTo(projectAssetBundlesDir);
     }
 }
 
@@ -575,11 +578,15 @@ public sealed class BuildThunderstorePackage : FrostingTask<BuildContext>
 
         Directory.CreateDirectory(publishDir);
 
-        var modDir = publishDir / project.Name;
+        var modDir = publishDir / "plugins" / project.Name;
         Directory.CreateDirectory(modDir);
             
         context.BuildDir.GlobFiles("*.dll")
             .CopyFilesTo(modDir);
+
+        var assetBundlesDir = context.BuildDir / "AssetBundles";
+        assetBundlesDir.GlobFiles("*")
+            .CopyFilesTo(modDir / "AssetBundles");
             
         File.Copy("../" / manifestFile, publishDir / manifestFile, true);
         File.Copy("../" / iconFile, publishDir / iconFile, true);
@@ -589,7 +596,7 @@ public sealed class BuildThunderstorePackage : FrostingTask<BuildContext>
         var manifest = JsonSerializer.Deserialize<ThunderStoreManifest>(File.ReadAllText(publishDir / manifestFile));
 
         var destDir = context.BuildDir / "upload";
-        if (Directory.Exists(destDir)) 
+        if (Directory.Exists(destDir))
             Directory.Delete(destDir, true);
 
         Directory.CreateDirectory(destDir);

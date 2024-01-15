@@ -7,6 +7,7 @@ namespace build;
 public class ProjectBuildSettings
 {
     public required string[] References { get; set; }
+    public required string[] AssetBundles { get; set; }
     public required string ProjectFile { get; set; }
     public required string UnityDir { get; set; }
     public required string ManifestAuthor { get; set; }
