@@ -11,6 +11,7 @@ public class ProjectBuildSettings
     public required string UnityDir { get; set; }
     public required string ManifestAuthor { get; set; }
     public required string NetcodePatcherRelease { get; set; }
+    public required string LethalEmotesApiVersion { get; set; }
 
     public static ProjectBuildSettings? LoadFromFile(AbsolutePath filePath)
     {

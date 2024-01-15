@@ -51,6 +51,7 @@ public class BuildContext : FrostingContext
     public CSharpProject Project { get; }
     public string ManifestAuthor { get; }
     public string NetcodePatcherRelease { get; }
+    public string LethalEmotesApiVersion { get; }
 
     #endregion
 
@@ -68,6 +69,7 @@ public class BuildContext : FrostingContext
     public AbsolutePath PatcherDir { get; }
     public readonly AbsolutePath StubbedLibsDir = new AbsolutePath("../") / "libs";
     public readonly AbsolutePath StubbedFilesPath = new AbsolutePath("../") / "libs" / "stubbed-files.zip";
+    public AbsolutePath LethalEmotesApiDir { get; }
     public AbsolutePath BuildDir { get; }
     public AbsolutePath UnityDir { get; }
     public AbsolutePath UnityAssetBundlesDir { get; }
@@ -95,6 +97,7 @@ public class BuildContext : FrostingContext
         Project = new CSharpProject(projectFilePath);
         ManifestAuthor = settings.ManifestAuthor;
         NetcodePatcherRelease = settings.NetcodePatcherRelease;
+        LethalEmotesApiVersion = settings.LethalEmotesApiVersion;
 
         UseStubbedLibs = context.Environment.GetEnvironmentVariable("USE_STUBBED_LIBS") is not null;
         GameDir = GetGameDirArg(context);
@@ -328,16 +331,16 @@ public sealed class DeployDepsToUnity : FrostingTask<BuildContext>
 {
     public override bool ShouldRun(BuildContext context)
     {
-        AbsolutePath unityPkgDir = context.UnityDir / "Packages";
-        AbsolutePath destDir = unityPkgDir / context.Project.Name;
-
-        if (!destDir.DirExists())
-            return true;
+        if (context.GameDir is null)
+            return false;
         
-        AbsolutePath destBepInExDll = destDir / "BepInEx.dll";
-        AbsolutePath destHarmonyDll = destDir / "0Harmony.dll";
+        AbsolutePath destDir = context.UnityDir / "Packages" / context.Project.Name;
+        if (!Directory.Exists(destDir))
+            return true;
 
-        if (!File.Exists(destBepInExDll) || !File.Exists(destHarmonyDll))
+        string[] depsToFind = [ "BepInEx.dll", "0Harmony.dll", "LethalEmotesAPI.dll", "LethalEmotesApi.Ui.dll" ];
+        var stubbedDeps = destDir.GlobFiles(depsToFind);
+        if (stubbedDeps.Count != depsToFind.Length)
             return true;
 
         return false;
@@ -345,25 +348,48 @@ public sealed class DeployDepsToUnity : FrostingTask<BuildContext>
 
     public override void Run(BuildContext context)
     {
-        AbsolutePath bepInExDll = context.GameDir! / "BepInEx" / "core" / "BepInEx.dll";
-        AbsolutePath harmonyDll = context.GameDir! / "BepInEx" / "core" / "0Harmony.dll";
-        
-        AbsolutePath unityPkgDir = context.UnityDir / "Packages";
-        AbsolutePath destDir = unityPkgDir / context.Project.Name;
-        
-        if (!Directory.Exists(destDir))
-            Directory.CreateDirectory(destDir);
+        AbsolutePath destDir = context.UnityDir / "Packages" / context.Project.Name;
+        destDir.EnsureDirectoryExists();
 
-        AbsolutePath destBepInExDll = destDir / bepInExDll.Name;
-        AbsolutePath destHarmonyDll = destDir / harmonyDll.Name;
+        var depsToStub = new List<AbsolutePath>();
+        depsToStub.AddRange(GetBepInExFiles(context));
+        depsToStub.AddRange(GetLethalEmotesApiFiles(context));
 
-        var options = new AssemblyPublicizerOptions
+        var stubOptions = new AssemblyPublicizerOptions
         {
             Strip = true,
             IncludeOriginalAttributesAttribute = false
         };
-        AssemblyPublicizer.Publicize(bepInExDll, destBepInExDll, options);
-        AssemblyPublicizer.Publicize(harmonyDll, destHarmonyDll, options);
+        
+        foreach (var dep in depsToStub)
+            AssemblyPublicizer.Publicize(dep, destDir / dep.Name, stubOptions);
+    }
+
+    private List<AbsolutePath> GetBepInExFiles(BuildContext context)
+    {
+        var coreDir = context.GameDir! / "BepInEx" / "core";
+        return coreDir.GlobFiles("BepInEx.dll", "0Harmony.dll");
+    }
+
+
+    private List<AbsolutePath> GetLethalEmotesApiFiles(BuildContext context)
+    {
+        var apiDir = context.ToolsDir / "LethalEmotesApi";
+        if (apiDir.DirExists())
+            Directory.Delete(apiDir, true);
+        
+        apiDir.EnsureDirectoryExists();
+        
+        var url= $"https://github.com/Wet-Boys/LethalEmotesAPI/releases/download/{context.LethalEmotesApiVersion}/Gemmumoddo-LethalEmotesAPI-{context.LethalEmotesApiVersion}.zip";
+        var apiZip = apiDir / "LethalEmotesApi.zip";
+        context.DownloadFile(url, apiZip);
+        
+        ZipFile.ExtractToDirectory(apiZip, apiDir);
+        File.Delete(apiZip);
+
+        var dllDir = apiDir / "LethalEmotesApi";
+
+        return dllDir.GlobFiles("*.dll");
     }
 }
 

@@ -9,6 +9,8 @@ namespace build.Utils;
 public class AbsolutePath
 {
     private readonly string _path;
+    
+    public string Name => Path.GetFileName(_path);
 
     public AbsolutePath(string path)
     {
@@ -17,8 +19,12 @@ public class AbsolutePath
         
         _path = path;
     }
-
-    public string Name => Path.GetFileName(_path);
+    
+    public void EnsureDirectoryExists()
+    {
+        if (!Directory.Exists(_path))
+            Directory.CreateDirectory(_path);
+    }
 
     public List<AbsolutePath> GlobFiles(params string[] patterns)
     {
