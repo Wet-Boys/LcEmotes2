@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.33694, g: 325.04984, b: 430.2193, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,85 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &435263062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 435263064}
+  - component: {fileID: 435263063}
+  m_Layer: 0
+  m_Name: Twitch Chat Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &435263063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435263062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1145319960, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chatPrefab: {fileID: 172287277267932083, guid: d5255688d16536b419d71ce4480905d5,
+    type: 3}
+  timeBetweenPulses: 0.46153846
+--- !u!4 &435263064
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435263062}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &608651202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 608651203}
+  m_Layer: 0
+  m_Name: Twitch Chat Message
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &608651203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608651202}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1543518087}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &985217200
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,6 +641,12 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
+--- !u!4 &1543518087 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4817368610668616488, guid: d5255688d16536b419d71ce4480905d5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1621174922998659627}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &52529796683339607
 Transform:
   m_ObjectHideFlags: 0
@@ -939,6 +1024,83 @@ Transform:
   - {fileID: 8137136224143792547}
   m_Father: {fileID: 4626183267293996462}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1621174922998659627
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 608651203}
+    m_Modifications:
+    - target: {fileID: 172287277267932083, guid: d5255688d16536b419d71ce4480905d5,
+        type: 3}
+      propertyPath: m_Name
+      value: Chat Message Controller
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817368610668616488, guid: d5255688d16536b419d71ce4480905d5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817368610668616488, guid: d5255688d16536b419d71ce4480905d5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817368610668616488, guid: d5255688d16536b419d71ce4480905d5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817368610668616488, guid: d5255688d16536b419d71ce4480905d5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817368610668616488, guid: d5255688d16536b419d71ce4480905d5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817368610668616488, guid: d5255688d16536b419d71ce4480905d5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817368610668616488, guid: d5255688d16536b419d71ce4480905d5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817368610668616488, guid: d5255688d16536b419d71ce4480905d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817368610668616488, guid: d5255688d16536b419d71ce4480905d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817368610668616488, guid: d5255688d16536b419d71ce4480905d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 4073252127691455933, guid: d5255688d16536b419d71ce4480905d5, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 276252190686156619, guid: d5255688d16536b419d71ce4480905d5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 4292371885163264963, guid: d5255688d16536b419d71ce4480905d5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: d5255688d16536b419d71ce4480905d5, type: 3}
 --- !u!4 &1628788305040339884
 Transform:
   m_ObjectHideFlags: 0
@@ -1667,6 +1829,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GoblinPainGif
+      objectReference: {fileID: 0}
+    - target: {fileID: 2856635214504991823, guid: d78a986372e65f246869073010033d78,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3095184617882944450, guid: d78a986372e65f246869073010033d78,
         type: 3}
@@ -3077,3 +3244,5 @@ SceneRoots:
   - {fileID: 5436618537750229349}
   - {fileID: 5112800762007310106}
   - {fileID: 4613790774529552665}
+  - {fileID: 608651203}
+  - {fileID: 435263064}
