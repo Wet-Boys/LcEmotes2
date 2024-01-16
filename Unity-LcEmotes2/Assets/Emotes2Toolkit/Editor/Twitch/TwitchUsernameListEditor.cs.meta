@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6675fef384683b641822019e62c0109a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - uxmlVisualTree: {fileID: 9197481963319205126, guid: 15b7f37ea0d88e341979af99a3c0cdfe,
+      type: 3}
+  - uxmlTwitchUsernameListItem: {fileID: 9197481963319205126, guid: 163396e5164d29043a4830faa67a8033,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

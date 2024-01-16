@@ -123,53 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &435263062
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 435263064}
-  - component: {fileID: 435263063}
-  m_Layer: 0
-  m_Name: Twitch Chat Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &435263063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435263062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1145319960, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chatPrefab: {fileID: 172287277267932083, guid: d5255688d16536b419d71ce4480905d5,
-    type: 3}
-  timeBetweenPulses: 0.46153846
---- !u!4 &435263064
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435263062}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &608651202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1400,6 +1353,74 @@ Transform:
   - {fileID: 8094900753416047932}
   m_Father: {fileID: 8228929966000801792}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2740711479135573721
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 373783738638544118, guid: c40b1b81e0a48844f9333cfe12eebff2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 373783738638544118, guid: c40b1b81e0a48844f9333cfe12eebff2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 373783738638544118, guid: c40b1b81e0a48844f9333cfe12eebff2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 373783738638544118, guid: c40b1b81e0a48844f9333cfe12eebff2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 373783738638544118, guid: c40b1b81e0a48844f9333cfe12eebff2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 373783738638544118, guid: c40b1b81e0a48844f9333cfe12eebff2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 373783738638544118, guid: c40b1b81e0a48844f9333cfe12eebff2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 373783738638544118, guid: c40b1b81e0a48844f9333cfe12eebff2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 373783738638544118, guid: c40b1b81e0a48844f9333cfe12eebff2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 373783738638544118, guid: c40b1b81e0a48844f9333cfe12eebff2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445641072794024997, guid: c40b1b81e0a48844f9333cfe12eebff2,
+        type: 3}
+      propertyPath: m_Name
+      value: Twitch Chat Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c40b1b81e0a48844f9333cfe12eebff2, type: 3}
 --- !u!4 &2831210894702555500
 Transform:
   m_ObjectHideFlags: 0
@@ -3245,4 +3266,4 @@ SceneRoots:
   - {fileID: 5112800762007310106}
   - {fileID: 4613790774529552665}
   - {fileID: 608651203}
-  - {fileID: 435263064}
+  - {fileID: 2740711479135573721}
