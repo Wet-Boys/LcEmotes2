@@ -47,3 +47,5 @@ MonoBehaviour:
   chatPrefab: {fileID: 172287277267932083, guid: d5255688d16536b419d71ce4480905d5,
     type: 3}
   timeBetweenPulses: 0.115384616
+  twitchUsernameProvider: {fileID: 11400000, guid: dfd69e07f5cc5ad4f83f4b5ba38e5169,
+    type: 2}
