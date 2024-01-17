@@ -49,3 +49,25 @@ MonoBehaviour:
   timeBetweenPulses: 0.115384616
   twitchUsernameProvider: {fileID: 11400000, guid: dfd69e07f5cc5ad4f83f4b5ba38e5169,
     type: 2}
+  weights:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  messages:
+  - ':GoblinPls:'
+  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
+  - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
+  - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
+  - ':GoblinPls:T:GoblinPls:A:GoblinPls:S:GoblinPls:T:GoblinPls:E:GoblinPls:'
+  - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:FUCK:GoblinPls:'
+  - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
+  - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
+  - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'

@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 2370968908
+CRC: 1506005583
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 4d6a9f781c16adcae1f753f5ed272582
+    Hash: 75b3644997b134e863a1439b5fba3c9e
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 4d2f8c44b5ecad9af44bf92697e07014
+    Hash: edaacc35c0c701922729031026c49aed
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 4d6a9f781c16adcae1f753f5ed272582
+    Hash: 75b3644997b134e863a1439b5fba3c9e
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -57,6 +57,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 2a16748d9461eae46a725db9776d5390, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 82cd92ffc29383742932b27ca414c80f, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 4f10dd60657c6004587f237a7e90f8e4, type: 3}
 - Class: 114
   Script: {fileID: -1493852115, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
@@ -78,6 +80,8 @@ ClassTypes:
   Script: {fileID: 1764363777, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
 - Class: 114
   Script: {fileID: 1064036761, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
+- Class: 114
+  Script: {fileID: -971495967, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -121,6 +125,8 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.Timeline.TimelineClip
 - AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.ExposedReference`1[LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain.Chat.TwitchChatController]
 - AssemblyName: UnityEngine.TextCoreFontEngineModule
   ClassName: UnityEngine.TextCore.FaceInfo
 - AssemblyName: UnityEngine.TextCoreFontEngineModule

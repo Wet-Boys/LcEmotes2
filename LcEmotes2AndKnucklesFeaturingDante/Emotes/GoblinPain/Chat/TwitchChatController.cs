@@ -10,6 +10,9 @@ public class TwitchChatController : MonoBehaviour
 
     public RandomTwitchUsernameProvider? twitchUsernameProvider;
 
+    public float[] weights = [];
+    public string[] messages = [];
+
     private float _timer;
     
     private void Update()
@@ -37,6 +40,46 @@ public class TwitchChatController : MonoBehaviour
         var twitchUsername = twitchUsernameProvider.GetUsername();
 
         var chatController = chat.GetComponent<ChatMessageController>();
-        chatController.SetChat(twitchUsername.Username, twitchUsername.UsernameColor, ":GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:");
+        chatController.SetChat(twitchUsername.Username, twitchUsername.UsernameColor, GetRandomMessage());
+    }
+    
+    private string GetRandomMessage()
+    {
+        if (weights.Length != messages.Length)
+            return "";
+        
+        if (weights.Length == 0)
+            return "";
+
+        float sumOfWeights = 0;
+
+        for (var i = 0; i < weights.Length; i++)
+        {
+            var weight = weights[i];
+
+            if (float.IsPositiveInfinity(weight))
+                return messages[i];
+
+            if (weight >= 0 && !float.IsNaN(weight))
+                sumOfWeights += weight;
+        }
+
+        var randomValue = Random.value;
+        var currentSum = 0f;
+
+        for (var i = 0; i < weights.Length; i++)
+        {
+            var weight = weights[i];
+
+            if (float.IsNaN(weight) || weight <= 0f)
+                continue;
+
+            currentSum += weight / sumOfWeights;
+
+            if (currentSum >= randomValue)
+                return messages[i];
+        }
+
+        return "";
     }
 }
