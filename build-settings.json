@@ -1,7 +1,8 @@
 {
   "References": [
     "Assembly-CSharp.dll",
-    "Unity.TextMeshPro.dll"
+    "Unity.TextMeshPro.dll",
+    "Unity.Timeline.dll"
   ],
   "AssetBundles": [
     "we like the pain"

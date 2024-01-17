@@ -26,5 +26,22 @@ namespace Emotes2Toolkit.Editor.UxmlUtils
 
             return AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(path);
         }
+
+        protected abstract VisualElement CreateCustomPropertyGUI(SerializedProperty property);
+
+        public override VisualElement CreatePropertyGUI(SerializedProperty property)
+        {
+            var root = new VisualElement();
+
+            var customRoot = CreateCustomPropertyGUI(property);
+            
+            customRoot.BindFields(this);
+            customRoot.BindButtonMethods(this);
+            customRoot.BindOnBindListeners(this, property);
+            
+            root.Add(customRoot);
+
+            return root;
+        }
     }
 }

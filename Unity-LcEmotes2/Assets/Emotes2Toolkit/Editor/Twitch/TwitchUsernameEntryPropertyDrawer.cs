@@ -10,7 +10,7 @@ namespace Emotes2Toolkit.Editor.Twitch
     {
         protected override string UxmlPath => "Twitch/uxml/TwitchUsernameEntry.uxml";
 
-        public override VisualElement CreatePropertyGUI(SerializedProperty property)
+        protected override VisualElement CreateCustomPropertyGUI(SerializedProperty property)
         {
             var root = new VisualElement();
 
