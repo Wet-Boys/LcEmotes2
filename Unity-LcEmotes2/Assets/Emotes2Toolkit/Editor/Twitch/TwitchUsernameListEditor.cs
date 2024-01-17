@@ -20,8 +20,10 @@ namespace Emotes2Toolkit.Editor.Twitch
         private string _usernameFieldValue;
         [UxmlBindValue("CreateEntryRoot.UsernameColorField")]
         private Color _usernameColorFieldValue;
-        [UxmlBindValue("CreateEntryRoot.HasSpecialMessageToggle")]
-        private bool _hasSpecialMessageValue;
+        [UxmlBindValue("CreateEntryRoot.SpecialMessageField")]
+        private string _specialMessageFieldValue;
+        [UxmlBindValue("CreateEntryRoot.PrefabField")]
+        private GameObject _prefabFieldValue;
 
         protected override VisualElement CreateCustomEditorGUI()
         {
@@ -84,7 +86,8 @@ namespace Emotes2Toolkit.Editor.Twitch
             var instance = CreateInstance<TwitchUsernameEntry>();
             instance.username = _usernameFieldValue;
             instance.usernameColor = _usernameColorFieldValue;
-            instance.hasSpecialMessage = _hasSpecialMessageValue;
+            instance.specialMessage = _specialMessageFieldValue;
+            instance.prefabOverride = _prefabFieldValue;
             
             AssetDatabase.CreateAsset(instance, path);
             AssetDatabase.Refresh();

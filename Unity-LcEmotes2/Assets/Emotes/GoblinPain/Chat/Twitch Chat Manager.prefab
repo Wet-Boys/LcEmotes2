@@ -60,9 +60,10 @@ MonoBehaviour:
   - 1
   - 1
   - 1
+  - 0
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -71,3 +72,4 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'

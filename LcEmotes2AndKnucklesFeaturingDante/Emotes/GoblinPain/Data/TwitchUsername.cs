@@ -10,10 +10,19 @@ public readonly struct TwitchUsername
 
     public readonly bool HasSpecialMessage;
 
-    public TwitchUsername(string username, Color usernameColor, bool hasSpecialMessage = false)
+    public readonly string? SpecialMessage = null;
+
+    public readonly bool HasPrefabOverride;
+
+    public readonly GameObject? PrefabOverride = null;
+
+    public TwitchUsername(string username, Color usernameColor, string? specialMessage = null, GameObject? prefabOverride = null)
     {
         Username = username;
         UsernameColor = usernameColor;
-        HasSpecialMessage = hasSpecialMessage;
+        HasSpecialMessage = !string.IsNullOrWhiteSpace(specialMessage);
+        SpecialMessage = specialMessage;
+        HasPrefabOverride = prefabOverride is not null;
+        PrefabOverride = prefabOverride;
     }
 }

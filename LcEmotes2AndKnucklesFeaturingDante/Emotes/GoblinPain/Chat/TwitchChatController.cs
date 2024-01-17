@@ -32,15 +32,28 @@ public class TwitchChatController : MonoBehaviour
             return;
         
         var position = transform.position + Random.insideUnitSphere * Random.Range(2f, 6f);
-        var chat = Instantiate(chatPrefab, position, Quaternion.AngleAxis(0, Vector3.up));
-
-        if (chat is null)
-            return;
-
         var twitchUsername = twitchUsernameProvider.GetUsername();
 
+        GameObject? chat;
+        
+        if (twitchUsername is { HasPrefabOverride: true, PrefabOverride: not null })
+            chat = Instantiate(twitchUsername.PrefabOverride, position, Quaternion.AngleAxis(0, Vector3.up));
+        else
+            chat = Instantiate(chatPrefab, position, Quaternion.AngleAxis(0, Vector3.up));
+        
+        if (chat is null)
+            return;
+        
         var chatController = chat.GetComponent<ChatMessageController>();
-        chatController.SetChat(twitchUsername.Username, twitchUsername.UsernameColor, GetRandomMessage());
+
+        string message;
+
+        if (twitchUsername.HasSpecialMessage && !string.IsNullOrWhiteSpace(twitchUsername.SpecialMessage))
+            message = twitchUsername.SpecialMessage;
+        else
+            message = GetRandomMessage();
+        
+        chatController.SetChat(twitchUsername.Username, twitchUsername.UsernameColor, message);
     }
     
     private string GetRandomMessage()

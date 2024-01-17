@@ -52,8 +52,7 @@ MonoBehaviour:
   content: {fileID: 4525016762312043390}
   textPrefab: {fileID: 7650370205833288289, guid: b9400046fac840d40a1958dcc30aceed,
     type: 3}
-  emotePrefab: {fileID: 6869491104683367220, guid: 1f54ccb91ba15344a8a1ca25df10c600,
-    type: 3}
+  emoteList: {fileID: 11400000, guid: b5f9337a184e79f42bff436802ce5424, type: 2}
   chatComponents:
   - {fileID: 8797451259553169867}
   - {fileID: 2975019041021125637}

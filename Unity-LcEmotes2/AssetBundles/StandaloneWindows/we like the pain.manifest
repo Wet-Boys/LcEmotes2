@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 1506005583
+CRC: 1681371677
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 75b3644997b134e863a1439b5fba3c9e
+    Hash: 2cbdecd4060d81953479a0c35c8f1c6b
   TypeTreeHash:
     serializedVersion: 2
-    Hash: edaacc35c0c701922729031026c49aed
+    Hash: 4d7e3ee1020ed028406abd39430e535f
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 75b3644997b134e863a1439b5fba3c9e
+    Hash: 2cbdecd4060d81953479a0c35c8f1c6b
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -57,13 +57,15 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 2a16748d9461eae46a725db9776d5390, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 82cd92ffc29383742932b27ca414c80f, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 4f10dd60657c6004587f237a7e90f8e4, type: 3}
 - Class: 114
   Script: {fileID: -1493852115, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
 - Class: 114
   Script: {fileID: 46164097, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
+- Class: 114
+  Script: {fileID: -1556285507, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
+- Class: 114
+  Script: {fileID: 1764363777, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
 - Class: 114
   Script: {fileID: 485445756, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
 - Class: 114
@@ -75,13 +77,15 @@ ClassTypes:
 - Class: 114
   Script: {fileID: -2018420592, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
 - Class: 114
-  Script: {fileID: -1556285507, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
-- Class: 114
-  Script: {fileID: 1764363777, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
-- Class: 114
   Script: {fileID: 1064036761, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
 - Class: 114
-  Script: {fileID: -971495967, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
+  Script: {fileID: 1686688072, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
+- Class: 114
+  Script: {fileID: -496441819, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
+- Class: 114
+  Script: {fileID: -1813242015, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
+- Class: 114
+  Script: {fileID: -144612019, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -125,8 +129,6 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.Timeline.TimelineClip
 - AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.Events.PersistentCallGroup
-- AssemblyName: UnityEngine.CoreModule
-  ClassName: UnityEngine.ExposedReference`1[LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain.Chat.TwitchChatController]
 - AssemblyName: UnityEngine.TextCoreFontEngineModule
   ClassName: UnityEngine.TextCore.FaceInfo
 - AssemblyName: UnityEngine.TextCoreFontEngineModule

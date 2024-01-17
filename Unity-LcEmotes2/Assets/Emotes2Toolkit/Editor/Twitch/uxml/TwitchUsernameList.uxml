@@ -4,7 +4,8 @@
         <ui:Label tabindex="-1" text="Create New Entry" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; -unity-font-style: bold;" />
         <ui:TextField picking-mode="Ignore" label="Username" name="UsernameField" />
         <uie:ColorField label="UsernameColor" value="RGBA(0.000, 1.000, 1.000, 1.000)" name="UsernameColorField" />
-        <ui:Toggle label="Has Special Message" name="HasSpecialMessageToggle" />
+        <ui:TextField picking-mode="Ignore" label="Special Message" multiline="true" name="SpecialMessageField" />
+        <uie:ObjectField label="Prefab" type="UnityEngine.GameObject, UnityEngine.CoreModule" allow-scene-objects="false" name="PrefabField" />
         <ui:Button text="Create" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CreateEntryButton" style="-unity-font-style: bold;" />
     </ui:VisualElement>
 </ui:UXML>

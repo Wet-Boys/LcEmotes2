@@ -7,7 +7,8 @@ public class TwitchUsernameEntry : ScriptableObject, ITwitchUsernameProvider
 {
     public string username = "";
     public Color usernameColor;
-    public bool hasSpecialMessage;
+    public string specialMessage = "";
+    public GameObject? prefabOverride;
     
-    public TwitchUsername GetUsername() => new(username, usernameColor, hasSpecialMessage);
+    public TwitchUsername GetUsername() => new(username, usernameColor, specialMessage, prefabOverride);
 }

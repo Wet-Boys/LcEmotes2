@@ -3,6 +3,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Object = UnityEngine.Object;
 
 namespace Emotes2Toolkit.Editor.UxmlUtils
 {
@@ -54,6 +55,8 @@ namespace Emotes2Toolkit.Editor.UxmlUtils
                     TryBindFieldValueListener<Color>(fieldInfo, element, instance);
                 else if (fieldType == typeof(bool))
                     TryBindFieldValueListener<bool>(fieldInfo, element, instance);
+                else if (fieldType == typeof(GameObject))
+                    TryBindFieldValueListener<Object>(fieldInfo, element, instance);
             }
         }
         
