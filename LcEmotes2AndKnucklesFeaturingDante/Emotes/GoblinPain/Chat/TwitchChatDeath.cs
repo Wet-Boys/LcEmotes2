@@ -10,8 +10,6 @@ public class TwitchChatDeath : MonoBehaviour
     
     private void OnDestroy()
     {
-        // Debug.Log($"TWICTH CHAT DEAD Player: {ownerPlayer} IsDead: {ownerPlayer.isPlayerDead}");
-        
         if (deadPrefab is null || ownerPlayer is null)
             return;
 

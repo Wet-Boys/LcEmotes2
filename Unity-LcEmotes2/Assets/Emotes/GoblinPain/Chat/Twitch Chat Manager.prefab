@@ -65,6 +65,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  - 0
   messages:
   - '[1,5](:GoblinPls:)'
   - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
@@ -79,9 +80,13 @@ MonoBehaviour:
   - ':HUHH:'
   - '[1,5](:monkaS:)'
   - :monkaS:RUN
+  - ':ALERTA:'
   fearFactor: 0
   fearWeight: 200
   fearIndices: 0b0000000c000000
+  alertActive: 0
+  alertWeight: 100
+  alertIndices: 
 --- !u!114 &4364310152770063264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,5 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: -2099087506, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ownerPlayer: {fileID: 0}
   deadPrefab: {fileID: 7445641072794024997, guid: 79dcbd29b811ef347a0b8672d84f3ae5,
     type: 3}

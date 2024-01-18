@@ -2,14 +2,15 @@
   "References": [
     "Assembly-CSharp.dll",
     "Unity.TextMeshPro.dll",
-    "Unity.Timeline.dll"
+    "Unity.Timeline.dll",
+    "Unity.Netcode.Runtime.dll"
   ],
   "AssetBundles": [
     "we like the pain"
   ],
   "ProjectFile": "./LcEmotes2AndKnucklesFeaturingDante/LcEmotes2AndKnucklesFeaturingDante.csproj",
   "UnityDir": "./Unity-LcEmotes2/",
-  "ManifestAuthor": "Gemmumoddo",
+  "ManifestAuthor": "Gemumoddo",
   "NetcodePatcherRelease": "2.4.0",
   "LethalEmotesApiVersion": "1.2.4"
 }

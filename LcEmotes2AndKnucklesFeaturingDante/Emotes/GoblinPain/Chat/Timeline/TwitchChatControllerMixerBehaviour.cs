@@ -11,6 +11,7 @@ public class TwitchChatControllerMixerBehaviour : PlayableBehaviour
             return;
 
         var fearIndices = controller.fearIndices;
+        var alertIndices = controller.alertIndices;
         var finalWeights = new float[controller.weights.Length];
 
         int inputCount = playable.GetInputCount();
@@ -23,7 +24,7 @@ public class TwitchChatControllerMixerBehaviour : PlayableBehaviour
 
             for (int j = 0; j < finalWeights.Length; j++)
             {
-                if (fearIndices.Contains(j))
+                if (fearIndices.Contains(j) || alertIndices.Contains(j))
                     continue;
                 
                 finalWeights[j] += input.weights[j] * inputWeight;
@@ -31,6 +32,10 @@ public class TwitchChatControllerMixerBehaviour : PlayableBehaviour
 
             foreach (var f in controller.fearIndices)
                 finalWeights[f] += controller.fearWeight * inputWeight * controller.fearFactor;
+
+            var alertActive = controller.alertActive ? 1f : 0f;
+            foreach (var a in controller.alertIndices)
+                finalWeights[a] += controller.alertWeight * inputWeight * alertActive;
         }
 
         controller.weights = finalWeights;

@@ -20,6 +20,10 @@ public class TwitchChatController : MonoBehaviour
     public float fearWeight = 160f;
     public int[] fearIndices = [];
 
+    public bool alertActive = false;
+    public float alertWeight = 100f;
+    public int[] alertIndices = [];
+
     private float _timer;
     
     private void Update()

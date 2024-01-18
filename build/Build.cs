@@ -341,7 +341,7 @@ public sealed class DeployDepsToUnity : FrostingTask<BuildContext>
         if (!Directory.Exists(destDir))
             return true;
 
-        string[] depsToFind = [ "BepInEx.dll", "0Harmony.dll", "LethalEmotesAPI.dll", "LethalEmotesApi.Ui.dll" ];
+        string[] depsToFind = [ "BepInEx.dll", "0Harmony.dll", "MonoMod.RuntimeDetour.dll", "LethalEmotesAPI.dll", "LethalEmotesApi.Ui.dll" ];
         var stubbedDeps = destDir.GlobFiles(depsToFind);
         if (stubbedDeps.Count != depsToFind.Length)
             return true;
@@ -371,7 +371,7 @@ public sealed class DeployDepsToUnity : FrostingTask<BuildContext>
     private List<AbsolutePath> GetBepInExFiles(BuildContext context)
     {
         var coreDir = context.GameDir! / "BepInEx" / "core";
-        return coreDir.GlobFiles("BepInEx.dll", "0Harmony.dll");
+        return coreDir.GlobFiles("BepInEx.dll", "0Harmony.dll", "MonoMod.RuntimeDetour.dll");
     }
 
 
