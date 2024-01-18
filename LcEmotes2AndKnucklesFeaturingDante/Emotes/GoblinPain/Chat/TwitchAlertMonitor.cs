@@ -23,6 +23,11 @@ public class TwitchAlertMonitor : MonoBehaviour
 
     private void OnRadiationWarning()
     {
+        if (chatController is null)
+            return;
+        
+        chatController.alertActive = true;
+        
         if (_stopAlertCoroutine is not null)
         {
             StopCoroutine(_stopAlertCoroutine);
