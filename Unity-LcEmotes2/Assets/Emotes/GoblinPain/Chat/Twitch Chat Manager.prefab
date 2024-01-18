@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 373783738638544118}
   - component: {fileID: 3608594436263664886}
   - component: {fileID: 4364310152770063264}
+  - component: {fileID: 4968071653545264785}
   m_Layer: 0
   m_Name: Twitch Chat Manager
   m_TagString: Untagged
@@ -86,7 +87,7 @@ MonoBehaviour:
   fearIndices: 0b0000000c000000
   alertActive: 0
   alertWeight: 100
-  alertIndices: 
+  alertIndices: 0d000000
 --- !u!114 &4364310152770063264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,3 +103,16 @@ MonoBehaviour:
   ownerPlayer: {fileID: 0}
   deadPrefab: {fileID: 7445641072794024997, guid: 79dcbd29b811ef347a0b8672d84f3ae5,
     type: 3}
+--- !u!114 &4968071653545264785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7445641072794024997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2143127100, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chatController: {fileID: 3608594436263664886}

@@ -1,5 +1,6 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
+using LcEmotes2AndKnucklesFeaturingDante.Common;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain;
 
@@ -25,6 +26,8 @@ public class LcEmotes2AndKnucklesFeaturingDantePlugin : BaseUnityPlugin
         RegisterAllEmotes();
         
         EmoteRegistry.FinalizeRegistry();
+        
+        GameEventBus.InitHooks();
     }
 
     private void RegisterAllEmotes()

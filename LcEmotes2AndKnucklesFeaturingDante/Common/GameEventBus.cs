@@ -15,9 +15,9 @@ internal static class GameEventBus
     private static Hook? _radiationWarningHUDHook;
 
     public static event Action? OnRadiationWarningHUD;
-    private static void RadiationWarningHUD(Action orig)
+    private static void RadiationWarningHUD(Action<HUDManager> orig, HUDManager self)
     {
-        orig();
+        orig(self);
         
         OnRadiationWarningHUD?.Invoke();
     }

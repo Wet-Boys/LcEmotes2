@@ -7,6 +7,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Utils;
 internal static class HookUtils
 {
     private const BindingFlags DefaultFlags = BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance;
+    private const BindingFlags StaticFlags = BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static;
 
     public static Hook NewHook<TTarget, TDest>(string targetMethodName, string destMethodName, TDest instance)
     {
@@ -23,10 +24,13 @@ internal static class HookUtils
         return new Hook(targetMethod, destMethod);
     }
     
+    /// <summary>
+    /// For static destination classes.
+    /// </summary>
     public static Hook NewHook<TTarget>(string targetMethodName, Type destType, string destMethodName)
     {
         var targetMethod = typeof(TTarget).GetMethod(targetMethodName, DefaultFlags);
-        var destMethod = destType.GetMethod(destMethodName, DefaultFlags);
+        var destMethod = destType.GetMethod(destMethodName, StaticFlags);
 
         return new Hook(targetMethod, destMethod);
     }
