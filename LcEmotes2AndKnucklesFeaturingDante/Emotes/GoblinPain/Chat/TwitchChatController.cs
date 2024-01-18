@@ -1,4 +1,5 @@
-﻿using LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain.Data;
+﻿using GameNetcodeStuff;
+using LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain.Data;
 using UnityEngine;
 
 namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain.Chat;
@@ -6,12 +7,18 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain.Chat;
 public class TwitchChatController : MonoBehaviour
 {
     public GameObject? chatPrefab;
+    public PlayerControllerB? ownerPlayer;
     public float timeBetweenPulses = 0.25f;
 
     public RandomTwitchUsernameProvider? twitchUsernameProvider;
 
     public float[] weights = [];
     public string[] messages = [];
+    
+    [Range(0, 1)]
+    public float fearFactor = 0f;
+    public float fearWeight = 160f;
+    public int[] fearIndices = [];
 
     private float _timer;
     
@@ -23,6 +30,10 @@ public class TwitchChatController : MonoBehaviour
             return;
         
         _timer = timeBetweenPulses;
+
+        if (ownerPlayer is not null)
+            fearFactor = ownerPlayer.playersManager.fearLevel;
+        
         SpawnChatMessage();
     }
 
@@ -30,8 +41,12 @@ public class TwitchChatController : MonoBehaviour
     {
         if (twitchUsernameProvider is null)
             return;
+
+        var playerVelocity = Vector3.zero;
+        if (ownerPlayer is not null)
+            playerVelocity = ownerPlayer.thisController.velocity;
         
-        var position = transform.position + Random.insideUnitSphere * Random.Range(2f, 6f);
+        var position = transform.position + playerVelocity + Random.insideUnitSphere * Random.Range(2f, 6f);
         var twitchUsername = twitchUsernameProvider.GetUsername();
 
         GameObject? chat;

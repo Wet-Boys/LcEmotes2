@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 373783738638544118}
-  - component: {fileID: 3608594436263664886}
-  - component: {fileID: 4364310152770063264}
+  - component: {fileID: 6267208172833396323}
+  - component: {fileID: 7153608229925374115}
   m_Layer: 0
-  m_Name: Twitch Chat Manager
+  m_Name: Dead Player Chat Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3608594436263664886
+--- !u!114 &6267208172833396323
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,41 +48,21 @@ MonoBehaviour:
   chatPrefab: {fileID: 172287277267932083, guid: d5255688d16536b419d71ce4480905d5,
     type: 3}
   ownerPlayer: {fileID: 0}
-  timeBetweenPulses: 0.115384616
+  timeBetweenPulses: 0.025
   twitchUsernameProvider: {fileID: 11400000, guid: dfd69e07f5cc5ad4f83f4b5ba38e5169,
     type: 2}
   weights:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 0
-  - 0
-  - 0
+  - 4
+  - 10
+  - 2
   messages:
-  - '[1,5](:GoblinPls:)'
-  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
-  - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
-  - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
-  - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
-  - ':GoblinPls:T:GoblinPls:A:GoblinPls:S:GoblinPls:T:GoblinPls:E:GoblinPls:'
-  - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:FUCK:GoblinPls:'
-  - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
-  - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
-  - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
-  - ':HUHH:'
-  - '[1,5](:monkaS:)'
-  - :monkaS:RUN
+  - ':chatDead:'
+  - ':OMEGALUL:'
+  - ':DColon:'
   fearFactor: 0
-  fearWeight: 200
-  fearIndices: 0b0000000c000000
---- !u!114 &4364310152770063264
+  fearWeight: 0
+  fearIndices: 
+--- !u!114 &7153608229925374115
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,8 +71,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7445641072794024997}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -2099087506, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
+  m_Script: {fileID: 485445756, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadPrefab: {fileID: 7445641072794024997, guid: 79dcbd29b811ef347a0b8672d84f3ae5,
-    type: 3}
+  timeUntilDestruction: 6.5

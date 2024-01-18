@@ -15,3 +15,7 @@ MonoBehaviour:
   emoteEntries:
   - {fileID: 11400000, guid: bc6edc03cff5343469d9c3ba56dd12fe, type: 2}
   - {fileID: 11400000, guid: 21ed0572b6c2be44cbf4fb495dabbe2b, type: 2}
+  - {fileID: 11400000, guid: 072f7a39418d15c43b2c3075c4f03bea, type: 2}
+  - {fileID: 11400000, guid: d30cf9e8e9d4d94498e95406208faa48, type: 2}
+  - {fileID: 11400000, guid: 93a0c5888acf09d4099f30298f3795e1, type: 2}
+  - {fileID: 11400000, guid: e561b04777f36c84c93c69b53b259605, type: 2}

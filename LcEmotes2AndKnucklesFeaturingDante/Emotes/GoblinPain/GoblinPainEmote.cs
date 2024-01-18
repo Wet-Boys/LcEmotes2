@@ -1,4 +1,5 @@
 ﻿using EmotesAPI;
+using LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain.Chat;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -29,6 +30,8 @@ public class GoblinPainEmote : AbstractEmote
         mapper.props.Add(Object.Instantiate(Assets.Load<GameObject>("Emotes/GoblinPain/PainHolder.prefab")));
         mapper.props[propIndex].GetComponentInChildren<PlayableDirector>().time = 0;
         mapper.props[propIndex].GetComponentInChildren<PlayableDirector>().Play();
+        mapper.props[propIndex].GetComponentInChildren<TwitchChatController>().ownerPlayer = mapper.playerController;
+        mapper.props[propIndex].GetComponentInChildren<TwitchChatDeath>().ownerPlayer = mapper.playerController;
         mapper.props[propIndex].transform.SetParent(mapper.mapperBody.transform);
         mapper.props[propIndex].transform.localEulerAngles = Vector3.zero;
         mapper.props[propIndex].transform.localPosition = new Vector3(0,1.0f,0);

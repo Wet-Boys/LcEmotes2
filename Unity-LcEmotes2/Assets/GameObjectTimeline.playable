@@ -133,9 +133,11 @@ MonoBehaviour:
   - 0
   - 0
   - 200
+  - 0
+  - 0
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -144,6 +146,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &-7498506143286280106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1960,9 +1964,11 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  - 0
+  - 80
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -1971,6 +1977,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &-7041162782462266941
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2038,9 +2046,11 @@ MonoBehaviour:
   - 0
   - 0
   - 200
+  - 0
+  - 0
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -2049,6 +2059,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &-4581461943206996899
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2116,9 +2128,11 @@ MonoBehaviour:
   - 0
   - 0
   - 200
+  - 0
+  - 0
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -2127,6 +2141,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &-4227155574792553579
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2230,7 +2246,25 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -2851,49 +2885,13 @@ MonoBehaviour:
     m_BlendOutDuration: 4.166666666666657
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -2920,49 +2918,13 @@ MonoBehaviour:
     m_BlendOutDuration: 2.366666666666646
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -5336,9 +5298,11 @@ MonoBehaviour:
   - 0
   - 0
   - 70
+  - 0
+  - 0
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -5347,6 +5311,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &74665517794582559
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5392,9 +5358,11 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  - 0
+  - 80
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -5403,6 +5371,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &256829140843116254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5492,9 +5462,11 @@ MonoBehaviour:
   - 25
   - 0
   - 0
+  - 5
+  - 80
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -5503,6 +5475,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &557168383043521700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5592,9 +5566,11 @@ MonoBehaviour:
   - 0
   - 10
   - 10
+  - 0
+  - 0
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -5603,6 +5579,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &1318521084612017824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5692,9 +5670,11 @@ MonoBehaviour:
   - 25
   - 0
   - 0
+  - 5
+  - 0
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -5703,6 +5683,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &2172992331315074081
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5726,9 +5708,11 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  - 0
+  - 80
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -5737,6 +5721,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &2499310974809768899
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5760,9 +5746,11 @@ MonoBehaviour:
   - 0
   - 0
   - 70
+  - 0
+  - 0
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -5771,6 +5759,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &2617802296975616428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5816,9 +5806,11 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  - 0
+  - 80
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -5827,6 +5819,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &3041634619070511845
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5872,9 +5866,11 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  - 0
+  - 80
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -5883,6 +5879,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &3227051332592272492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5950,9 +5948,11 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  - 0
+  - 80
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -5961,6 +5961,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &3483399071536924121
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6028,9 +6030,11 @@ MonoBehaviour:
   - 0
   - 0
   - 200
+  - 0
+  - 80
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -6039,6 +6043,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &4342895623447465597
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6106,9 +6112,11 @@ MonoBehaviour:
   - 0
   - 0
   - 70
+  - 0
+  - 0
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -6117,6 +6125,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &5483692819913079105
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6140,9 +6150,11 @@ MonoBehaviour:
   - 0
   - 60
   - 0
+  - 0
+  - 0
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -6151,6 +6163,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &5738834367682166035
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6174,9 +6188,11 @@ MonoBehaviour:
   - 0
   - 0
   - 200
+  - 0
+  - 0
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -6185,6 +6201,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &6011077815998429261
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6274,9 +6292,11 @@ MonoBehaviour:
   - 0
   - 0
   - 200
+  - 0
+  - 80
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -6285,6 +6305,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &6923680356353090167
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6347,9 +6369,11 @@ MonoBehaviour:
   - 0
   - 60
   - 0
+  - 0
+  - 80
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -6358,6 +6382,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &7357609605813557466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6689,9 +6715,11 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  - 0
+  - 0
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -6700,6 +6728,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &8842892870536112548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6902,9 +6932,11 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  - 0
+  - 80
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -6913,6 +6945,8 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'
 --- !u!114 &9162080738242525278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6936,9 +6970,11 @@ MonoBehaviour:
   - 0
   - 0
   - 70
+  - 0
+  - 80
   messages:
-  - ':GoblinPls:'
-  - :GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N
+  - '[1,5](:GoblinPls:)'
+  - ':GoblinPls:P:GoblinPls:A:GoblinPls:I:GoblinPls:N:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:WATCH:GoblinPls:'
   - ':GoblinPls:W:GoblinPls:A:GoblinPls:T:GoblinPls:C:GoblinPls:H:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:TO:GoblinPls:TASTE:GoblinPls:'
@@ -6947,3 +6983,5 @@ MonoBehaviour:
   - ':GoblinPls:F:GoblinPls:U:GoblinPls:C:GoblinPls:K:GoblinPls:'
   - ':GoblinPls:AND:GoblinPls:WE:GoblinPls:LIKE:GoblinPls:PAIN:GoblinPls:'
   - ':GoblinPls:WE:GoblinPls:LIKE:GoblinPls:THE:GoblinPls:PAIN:GoblinPls:'
+  - ':HUHH:'
+  - '[1,5](:monkaS:)'

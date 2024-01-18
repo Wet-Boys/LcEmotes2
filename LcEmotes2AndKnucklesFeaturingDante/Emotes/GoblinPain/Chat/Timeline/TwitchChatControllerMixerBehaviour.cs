@@ -1,4 +1,5 @@
-﻿using UnityEngine.Playables;
+﻿using System.Linq;
+using UnityEngine.Playables;
 
 namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain.Chat.Timeline;
 
@@ -9,6 +10,7 @@ public class TwitchChatControllerMixerBehaviour : PlayableBehaviour
         if (playerData is not TwitchChatController controller)
             return;
 
+        var fearIndices = controller.fearIndices;
         var finalWeights = new float[controller.weights.Length];
 
         int inputCount = playable.GetInputCount();
@@ -20,7 +22,15 @@ public class TwitchChatControllerMixerBehaviour : PlayableBehaviour
             var input = inputPlayable.GetBehaviour();
 
             for (int j = 0; j < finalWeights.Length; j++)
+            {
+                if (fearIndices.Contains(j))
+                    continue;
+                
                 finalWeights[j] += input.weights[j] * inputWeight;
+            }
+
+            foreach (var f in controller.fearIndices)
+                finalWeights[f] += controller.fearWeight * inputWeight * controller.fearFactor;
         }
 
         controller.weights = finalWeights;
