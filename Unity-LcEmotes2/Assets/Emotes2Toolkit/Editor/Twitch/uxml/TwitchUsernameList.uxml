@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:ListView focusable="true" reorderable="true" show-foldout-header="true" show-border="true" show-alternating-row-backgrounds="None" header-title="Entries" show-bound-collection-size="true" show-add-remove-footer="false" reorder-mode="Animated" name="EntriesListView" virtualization-method="FixedHeight" fixed-item-height="100" />
+    <ui:VisualElement name="CreateEntryRoot" style="flex-grow: initial; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-left-color: rgb(125, 125, 125); border-right-color: rgb(125, 125, 125); border-top-color: rgb(125, 125, 125); border-bottom-color: rgb(125, 125, 125); border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; padding-top: 6px; padding-right: 6px; padding-bottom: 6px; padding-left: 6px;">
+        <ui:Label tabindex="-1" text="Create New Entry" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; -unity-font-style: bold;" />
+        <ui:TextField picking-mode="Ignore" label="Username" name="UsernameField" />
+        <uie:ColorField label="UsernameColor" value="RGBA(0.000, 1.000, 1.000, 1.000)" name="UsernameColorField" />
+        <ui:TextField picking-mode="Ignore" label="Special Message" multiline="true" name="SpecialMessageField" />
+        <uie:ObjectField label="Prefab" type="UnityEngine.GameObject, UnityEngine.CoreModule" allow-scene-objects="false" name="PrefabField" />
+        <ui:Button text="Create" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CreateEntryButton" style="-unity-font-style: bold;" />
+    </ui:VisualElement>
+</ui:UXML>

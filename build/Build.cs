@@ -48,9 +48,11 @@ public class BuildContext : FrostingContext
     #region Settings
 
     public string[] References { get; }
+    public string[] AssetBundles { get; }
     public CSharpProject Project { get; }
     public string ManifestAuthor { get; }
     public string NetcodePatcherRelease { get; }
+    public string LethalEmotesApiVersion { get; }
 
     #endregion
 
@@ -92,9 +94,11 @@ public class BuildContext : FrostingContext
 
         var projectFilePath = (AbsolutePath)"../" / settings.ProjectFile;
         References = settings.References;
+        AssetBundles = settings.AssetBundles;
         Project = new CSharpProject(projectFilePath);
         ManifestAuthor = settings.ManifestAuthor;
         NetcodePatcherRelease = settings.NetcodePatcherRelease;
+        LethalEmotesApiVersion = settings.LethalEmotesApiVersion;
 
         UseStubbedLibs = context.Environment.GetEnvironmentVariable("USE_STUBBED_LIBS") is not null;
         GameDir = GetGameDirArg(context);
@@ -252,10 +256,12 @@ public sealed class UpdateAssetBundles : FrostingTask<BuildContext>
             context.Log.Warning($"Could not find `{context.UnityAssetBundlesDir}`!");
             return;
         }
-        // TODO set up asset bundle loading!
-        
-        // context.UnityAssetBundlesDir.GlobFiles("")
-        //     .CopyFilesTo(context.Project.Directory);
+
+        var projectAssetBundlesDir = context.Project.Directory / "AssetBundles";
+        projectAssetBundlesDir.EnsureDirectoryExists();
+
+        context.UnityAssetBundlesDir.GlobFiles(context.AssetBundles)
+            .CopyFilesTo(projectAssetBundlesDir);
     }
 }
 
@@ -328,16 +334,16 @@ public sealed class DeployDepsToUnity : FrostingTask<BuildContext>
 {
     public override bool ShouldRun(BuildContext context)
     {
-        AbsolutePath unityPkgDir = context.UnityDir / "Packages";
-        AbsolutePath destDir = unityPkgDir / context.Project.Name;
-
-        if (!destDir.DirExists())
-            return true;
+        if (context.GameDir is null)
+            return false;
         
-        AbsolutePath destBepInExDll = destDir / "BepInEx.dll";
-        AbsolutePath destHarmonyDll = destDir / "0Harmony.dll";
+        AbsolutePath destDir = context.UnityDir / "Packages" / context.Project.Name;
+        if (!Directory.Exists(destDir))
+            return true;
 
-        if (!File.Exists(destBepInExDll) || !File.Exists(destHarmonyDll))
+        string[] depsToFind = [ "BepInEx.dll", "0Harmony.dll", "MonoMod.RuntimeDetour.dll", "LethalEmotesAPI.dll", "LethalEmotesApi.Ui.dll" ];
+        var stubbedDeps = destDir.GlobFiles(depsToFind);
+        if (stubbedDeps.Count != depsToFind.Length)
             return true;
 
         return false;
@@ -345,25 +351,48 @@ public sealed class DeployDepsToUnity : FrostingTask<BuildContext>
 
     public override void Run(BuildContext context)
     {
-        AbsolutePath bepInExDll = context.GameDir! / "BepInEx" / "core" / "BepInEx.dll";
-        AbsolutePath harmonyDll = context.GameDir! / "BepInEx" / "core" / "0Harmony.dll";
-        
-        AbsolutePath unityPkgDir = context.UnityDir / "Packages";
-        AbsolutePath destDir = unityPkgDir / context.Project.Name;
-        
-        if (!Directory.Exists(destDir))
-            Directory.CreateDirectory(destDir);
+        AbsolutePath destDir = context.UnityDir / "Packages" / context.Project.Name;
+        destDir.EnsureDirectoryExists();
 
-        AbsolutePath destBepInExDll = destDir / bepInExDll.Name;
-        AbsolutePath destHarmonyDll = destDir / harmonyDll.Name;
+        var depsToStub = new List<AbsolutePath>();
+        depsToStub.AddRange(GetBepInExFiles(context));
+        depsToStub.AddRange(GetLethalEmotesApiFiles(context));
 
-        var options = new AssemblyPublicizerOptions
+        var stubOptions = new AssemblyPublicizerOptions
         {
             Strip = true,
             IncludeOriginalAttributesAttribute = false
         };
-        AssemblyPublicizer.Publicize(bepInExDll, destBepInExDll, options);
-        AssemblyPublicizer.Publicize(harmonyDll, destHarmonyDll, options);
+        
+        foreach (var dep in depsToStub)
+            AssemblyPublicizer.Publicize(dep, destDir / dep.Name, stubOptions);
+    }
+
+    private List<AbsolutePath> GetBepInExFiles(BuildContext context)
+    {
+        var coreDir = context.GameDir! / "BepInEx" / "core";
+        return coreDir.GlobFiles("BepInEx.dll", "0Harmony.dll", "MonoMod.RuntimeDetour.dll");
+    }
+
+
+    private List<AbsolutePath> GetLethalEmotesApiFiles(BuildContext context)
+    {
+        var apiDir = context.ToolsDir / "LethalEmotesApi";
+        if (apiDir.DirExists())
+            Directory.Delete(apiDir, true);
+        
+        apiDir.EnsureDirectoryExists();
+        
+        var url= $"https://github.com/Wet-Boys/LethalEmotesAPI/releases/download/{context.LethalEmotesApiVersion}/Gemmumoddo-LethalEmotesAPI-{context.LethalEmotesApiVersion}.zip";
+        var apiZip = apiDir / "LethalEmotesApi.zip";
+        context.DownloadFile(url, apiZip);
+        
+        ZipFile.ExtractToDirectory(apiZip, apiDir);
+        File.Delete(apiZip);
+
+        var dllDir = apiDir / "LethalEmotesApi";
+
+        return dllDir.GlobFiles("*.dll");
     }
 }
 
@@ -397,20 +426,18 @@ public sealed class DeployToGame : FrostingTask<BuildContext>
     public override void Run(BuildContext context)
     {
         var project = context.Project;
+        var assetBundlesDir = context.BuildDir / "AssetBundles";
         
         foreach (var target in context.DeployTargets)
         {
             AbsolutePath destDir = target / project.Name;
-
-            if (!Directory.Exists(destDir))
-                Directory.CreateDirectory(destDir);
+            destDir.EnsureDirectoryExists();
             
             context.BuildDir.GlobFiles("*.dll", "*.pdb")
-                .ForEach(file =>
-                {
-                    var destFile = destDir / file.Name;
-                    File.Copy(file, destFile, true);
-                });
+                .CopyFilesTo(destDir);
+            
+            assetBundlesDir.GlobFiles("*")
+                .CopyFilesTo(destDir / "AssetBundles");
         }
     }
 }
@@ -549,11 +576,15 @@ public sealed class BuildThunderstorePackage : FrostingTask<BuildContext>
 
         Directory.CreateDirectory(publishDir);
 
-        var modDir = publishDir / project.Name;
+        var modDir = publishDir / "plugins" / project.Name;
         Directory.CreateDirectory(modDir);
             
         context.BuildDir.GlobFiles("*.dll")
             .CopyFilesTo(modDir);
+
+        var assetBundlesDir = context.BuildDir / "AssetBundles";
+        assetBundlesDir.GlobFiles("*")
+            .CopyFilesTo(modDir / "AssetBundles");
             
         File.Copy("../" / manifestFile, publishDir / manifestFile, true);
         File.Copy("../" / iconFile, publishDir / iconFile, true);
@@ -563,7 +594,7 @@ public sealed class BuildThunderstorePackage : FrostingTask<BuildContext>
         var manifest = JsonSerializer.Deserialize<ThunderStoreManifest>(File.ReadAllText(publishDir / manifestFile));
 
         var destDir = context.BuildDir / "upload";
-        if (Directory.Exists(destDir)) 
+        if (Directory.Exists(destDir))
             Directory.Delete(destDir, true);
 
         Directory.CreateDirectory(destDir);

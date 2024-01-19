@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:Template name="TwitchUsernameEntry" src="project://database/Assets/Emotes2Toolkit/Editor/Twitch/uxml/TwitchUsernameEntry.uxml?fileID=9197481963319205126&amp;guid=0d26fbe5a51b6ba45bd4a817c83f0e85&amp;type=3#TwitchUsernameEntry" />
+    <ui:VisualElement style="flex-grow: 1; padding-top: 4px; padding-right: 4px; padding-bottom: 4px; padding-left: 4px; border-left-color: rgb(91, 91, 91); border-right-color: rgb(91, 91, 91); border-top-color: rgb(91, 91, 91); border-bottom-color: rgb(91, 91, 91); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; margin-top: 4px; margin-right: 4px; margin-bottom: 4px; margin-left: 4px;">
+        <ui:FloatField label="Weight" value="1" name="WeightField" binding-path="weight" />
+        <ui:Instance template="TwitchUsernameEntry" name="TwitchUsernameEntry" binding-path="entry" />
+    </ui:VisualElement>
+</ui:UXML>

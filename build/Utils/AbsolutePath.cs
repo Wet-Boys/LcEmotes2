@@ -9,6 +9,8 @@ namespace build.Utils;
 public class AbsolutePath
 {
     private readonly string _path;
+    
+    public string Name => Path.GetFileName(_path);
 
     public AbsolutePath(string path)
     {
@@ -17,8 +19,12 @@ public class AbsolutePath
         
         _path = path;
     }
-
-    public string Name => Path.GetFileName(_path);
+    
+    public void EnsureDirectoryExists()
+    {
+        if (!Directory.Exists(_path))
+            Directory.CreateDirectory(_path);
+    }
 
     public List<AbsolutePath> GlobFiles(params string[] patterns)
     {
@@ -62,6 +68,8 @@ internal static class AbsolutePathUtils
 {
     public static void CopyFilesTo(this IEnumerable<AbsolutePath> files, AbsolutePath destDir)
     {
+        destDir.EnsureDirectoryExists();
+        
         foreach (var file in files)
         {
             var destFile = destDir / file.Name;

@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1813242015, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
+  m_Name: monkaSEmoteEntry
+  m_EditorClassIdentifier: 
+  emoteName: monkaS
+  prefab: {fileID: 6869491104683367220, guid: b606c3c4e0b7d6a42ba69fd2e50e65ed, type: 3}

@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement style="flex-grow: 1;">
+        <uie:PropertyField focusable="false" binding-path="username" label="Username" name="UsernameField" />
+        <uie:PropertyField binding-path="usernameColor" label="Username Color" name="UsernameColorField" />
+        <uie:PropertyField binding-path="hasSpecialMessage" label="Has Special Message" name="HasSpecialMessageField" />
+    </ui:VisualElement>
+</ui:UXML>
