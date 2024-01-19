@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -768340271, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
-  m_Name: Rune580-TwitchUsernameEntry
+  m_Script: {fileID: -2018420592, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
+  m_Name: devinchat-TwitchUsername-WeightedEntry
   m_EditorClassIdentifier: 
-  username: rune580
-  usernameColor: {r: 1, g: 0.27058825, b: 0, a: 1}
-  specialMessage: 
-  prefabOverride: {fileID: 0}
+  weight: 1
+  entry: {fileID: 11400000, guid: 4c963a79244369544b5c366b288819a7, type: 2}
