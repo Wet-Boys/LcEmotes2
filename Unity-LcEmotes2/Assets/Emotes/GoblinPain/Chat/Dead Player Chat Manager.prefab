@@ -62,6 +62,9 @@ MonoBehaviour:
   fearFactor: 0
   fearWeight: 0
   fearIndices: 
+  alertActive: 0
+  alertWeight: 100
+  alertIndices: 
 --- !u!114 &7153608229925374115
 MonoBehaviour:
   m_ObjectHideFlags: 0
