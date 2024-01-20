@@ -6,11 +6,12 @@
     "Unity.Netcode.Runtime.dll"
   ],
   "AssetBundles": [
-    "we like the pain"
+    "we like the pain",
+    "xqc clap"
   ],
   "ProjectFile": "./LcEmotes2AndKnucklesFeaturingDante/LcEmotes2AndKnucklesFeaturingDante.csproj",
   "UnityDir": "./Unity-LcEmotes2/",
   "ManifestAuthor": "Gemumoddo",
   "NetcodePatcherRelease": "2.4.0",
-  "LethalEmotesApiVersion": "1.2.4"
+  "LethalEmotesApiVersion": "1.2.14"
 }
