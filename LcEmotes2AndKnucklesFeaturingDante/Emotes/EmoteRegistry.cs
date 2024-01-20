@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using EmotesAPI;
+using LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain;
 
 namespace LcEmotes2AndKnucklesFeaturingDante.Emotes;
 
@@ -28,16 +30,28 @@ internal static class EmoteRegistry
 
         foreach (var (_, emote) in Emotes)
             CustomEmotesAPI.AddCustomAnimation(emote.GetClipParams());
-        
+
         CustomEmotesAPI.animChanged += OnSpawnWorldProps;
         _finished = true;
     }
 
     private static void OnSpawnWorldProps(string animName, BoneMapper mapper)
     {
+        GoblinPainEmote.mappersPlayingPain.Remove(mapper);
+        if (GoblinPainEmote.mappersPlayingPain.ContainsKey(CustomEmotesAPI.localMapper))
+        {
+            GoblinPainEmote.mappersPlayingPain[CustomEmotesAPI.localMapper].gameObject.SetActive(true);
+        }
+        else if (GoblinPainEmote.mappersPlayingPain.Count != 0)
+        {
+            GoblinPainEmote.mappersPlayingPain.First().Value.gameObject.SetActive(true);
+        }
+
+
+
         if (!Emotes.TryGetValue(animName, out var emote))
             return;
-        
+
         emote.SpawnProps(mapper);
     }
 }

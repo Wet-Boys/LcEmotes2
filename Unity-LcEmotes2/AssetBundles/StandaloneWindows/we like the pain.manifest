@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 3883878297
+CRC: 1881493098
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: a753c3fd21b740bee496faf72445be02
+    Hash: 89dcbb406687506c01b281d3e9558276
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 90ea1ba32b87cc8975163406e59e9ff4
+    Hash: 0ebe933daad7526d605a1c248c435415
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: a753c3fd21b740bee496faf72445be02
+    Hash: 89dcbb406687506c01b281d3e9558276
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -58,8 +58,6 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 2a16748d9461eae46a725db9776d5390, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 4f10dd60657c6004587f237a7e90f8e4, type: 3}
 - Class: 114
   Script: {fileID: -1813242015, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
 - Class: 114
@@ -122,8 +120,6 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.VertexGradient
 - AssemblyName: Unity.Timeline
-  ClassName: UnityEngine.Timeline.AudioClipProperties
-- AssemblyName: Unity.Timeline
   ClassName: UnityEngine.Timeline.AudioMixerProperties
 - AssemblyName: Unity.Timeline
   ClassName: UnityEngine.Timeline.MarkerList
@@ -145,5 +141,6 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
 Assets:
 - Assets/Emotes/GoblinPain/Goblin Pain Emote Scav.anim
+- Assets/Emotes/GoblinPain/goblin-we-like-to-pain.ogg
 - Assets/Emotes/GoblinPain/PainHolder.prefab
 Dependencies: []
