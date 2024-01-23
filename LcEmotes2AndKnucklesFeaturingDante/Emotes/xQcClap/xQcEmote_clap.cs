@@ -8,23 +8,22 @@ using UnityEngine;
 
 namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap
 {
-    public class xQcEmote : AbstractEmote
+    public class xQcEmote_clap : AbstractEmote
     {
-        public override string AnimationClipName => "xqc_clap_start";
+        public override string AnimationClipName => "xqc_clap_loop";
 
         public override AnimationClipParams GetClipParams()
         {
             return new AnimationClipParams
             {
-                animationClip = [Assets.Load<AnimationClip>($"Emotes/xQcClap/{AnimationClipName}.anim")],
-                secondaryAnimation = [Assets.Load<AnimationClip>($"Emotes/xQcClap/xqc_clap_loop.anim")],
-                _primaryAudioClips = [Assets.Load<AudioClip>("Emotes/xQcClap/Audio/xqc_wow.ogg")],
-                _secondaryAudioClips = [Assets.Load<AudioClip>("Emotes/xQcClap/Audio/xqc_claploop.ogg")],
+                animationClip = [Assets.Load<AnimationClip>($"Emotes/xQcClap/xqc_clap_loop.anim")],
+                _primaryAudioClips = [Assets.Load<AudioClip>("Emotes/xQcClap/Audio/xqc_claploop.ogg")],
                 looping = true,
                 syncAnim = false,
                 syncAudio = false,
-                customName = "xQc Clap",
-                lockType = AnimationClipParams.LockType.lockHead,
+                customName = "",
+                visible = false,
+                lockType = AnimationClipParams.LockType.headBobbing,
                 willGetClaimedByDMCA = false,
                 thirdPerson = false,
                 rootBonesToIgnore = [HumanBodyBones.RightUpperLeg, HumanBodyBones.LeftUpperLeg],
@@ -38,7 +37,17 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap
         {
             GameObject g = new GameObject();
             ClapHandler c = g.AddComponent<ClapHandler>();
-            c.Setup(mapper, UnityEngine.Random.Range(3f,7f), "xQcYellAtSky");
+            float time;
+            if (UnityEngine.Random.Range(0, 10) < 4)
+            {
+                time = UnityEngine.Random.Range(.075f, .20f);
+            }
+            else
+            {
+                time = UnityEngine.Random.Range(3f, 7f);
+
+            }
+            c.Setup(mapper, time, "xQcYellAtSky");
             g.transform.SetParent(mapper.transform, false);
             mapper.props.Add(g);
         }

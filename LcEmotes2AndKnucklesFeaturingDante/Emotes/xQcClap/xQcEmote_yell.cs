@@ -8,23 +8,24 @@ using UnityEngine;
 
 namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap
 {
-    public class xQcEmote : AbstractEmote
+    public class xQcEmote_yell : AbstractEmote
     {
-        public override string AnimationClipName => "xqc_clap_start";
+        public override string AnimationClipName => "xQcYellAtSky";
 
         public override AnimationClipParams GetClipParams()
         {
             return new AnimationClipParams
             {
-                animationClip = [Assets.Load<AnimationClip>($"Emotes/xQcClap/{AnimationClipName}.anim")],
+                animationClip = [Assets.Load<AnimationClip>($"Emotes/xQcClap/Animations/{AnimationClipName}.anim")],
                 secondaryAnimation = [Assets.Load<AnimationClip>($"Emotes/xQcClap/xqc_clap_loop.anim")],
-                _primaryAudioClips = [Assets.Load<AudioClip>("Emotes/xQcClap/Audio/xqc_wow.ogg")],
-                _secondaryAudioClips = [Assets.Load<AudioClip>("Emotes/xQcClap/Audio/xqc_claploop.ogg")],
-                looping = true,
+                _primaryAudioClips = [Assets.Load<AudioClip>("Emotes/xQcClap/Audio/ahhhh2.ogg"), Assets.Load<AudioClip>("Emotes/xQcClap/Audio/ahhhh3.ogg"), Assets.Load<AudioClip>("Emotes/xQcClap/Audio/ahhhh4.ogg")],
+                _secondaryAudioClips = [Assets.Load<AudioClip>("Emotes/xQcClap/Audio/xqc_claploop.ogg"), Assets.Load<AudioClip>("Emotes/xQcClap/Audio/xqc_claploop.ogg"), Assets.Load<AudioClip>("Emotes/xQcClap/Audio/xqc_claploop.ogg")],
+                looping = false,
                 syncAnim = false,
                 syncAudio = false,
-                customName = "xQc Clap",
-                lockType = AnimationClipParams.LockType.lockHead,
+                customName = "",
+                visible = false,
+                lockType = AnimationClipParams.LockType.headBobbing,
                 willGetClaimedByDMCA = false,
                 thirdPerson = false,
                 rootBonesToIgnore = [HumanBodyBones.RightUpperLeg, HumanBodyBones.LeftUpperLeg],
@@ -38,7 +39,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap
         {
             GameObject g = new GameObject();
             ClapHandler c = g.AddComponent<ClapHandler>();
-            c.Setup(mapper, UnityEngine.Random.Range(3f,7f), "xQcYellAtSky");
+            c.Setup(mapper, UnityEngine.Random.Range(.15f, .20f), "xqc_clap_loop");
             g.transform.SetParent(mapper.transform, false);
             mapper.props.Add(g);
         }

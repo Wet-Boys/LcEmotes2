@@ -35,5 +35,8 @@ public class LcEmotes2AndKnucklesFeaturingDantePlugin : BaseUnityPlugin
     {
         EmoteRegistry.RegisterEmote<GoblinPainEmote>();
         EmoteRegistry.RegisterEmote<xQcEmote>();
+        EmoteRegistry.RegisterEmote<xQcEmote_yell>();
+        EmoteRegistry.RegisterEmote<xQcEmote_clap>();
+
     }
 }

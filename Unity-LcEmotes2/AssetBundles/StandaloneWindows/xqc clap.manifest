@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 4269277402
+CRC: 3987521942
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 737204a519ac41f3cb90b7dc88b1ef24
+    Hash: 7167825f6084fe12978417f9c838740b
   TypeTreeHash:
     serializedVersion: 2
     Hash: 4f83eafcb85d26b347625dd18247ce61
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 737204a519ac41f3cb90b7dc88b1ef24
+    Hash: 7167825f6084fe12978417f9c838740b
 HashAppended: 0
 ClassTypes:
 - Class: 74
@@ -22,4 +22,8 @@ Assets:
 - Assets/Emotes/xQcClap/xqc_clap_loop.anim
 - Assets/Emotes/xQcClap/Audio/xqc_wow.ogg
 - Assets/Emotes/xQcClap/Audio/xqc_claploop.ogg
+- Assets/Emotes/xQcClap/Audio/ahhhh2.ogg
+- Assets/Emotes/xQcClap/Audio/ahhhh3.ogg
+- Assets/Emotes/xQcClap/Animations/xQcYellAtSky.anim
+- Assets/Emotes/xQcClap/Audio/ahhhh4.ogg
 Dependencies: []
