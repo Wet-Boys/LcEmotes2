@@ -22,6 +22,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap
                 syncAnim = false,
                 syncAudio = false,
                 customName = "",
+                displayName = "xQc Clap",
                 visible = false,
                 lockType = AnimationClipParams.LockType.headBobbing,
                 willGetClaimedByDMCA = false,
@@ -50,6 +51,8 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap
             c.Setup(mapper, time, "xQcYellAtSky");
             g.transform.SetParent(mapper.transform, false);
             mapper.props.Add(g);
+
+            c.SpawnFX(mapper);
         }
     }
 }

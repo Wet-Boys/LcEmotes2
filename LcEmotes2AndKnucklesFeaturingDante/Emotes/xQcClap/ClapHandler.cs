@@ -26,6 +26,25 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap
             }
         }
 
+        internal IEnumerator SpawnClapFXAfterTime(float time, BoneMapper mapper)
+        {
+            yield return new WaitForSeconds(time);
+            SpawnFX(mapper);
+        }
+        internal void SpawnFX(BoneMapper mapper)
+        {
+            var propIndex = mapper.props.Count;
+            mapper.props.Add(UnityEngine.Object.Instantiate(Assets.Load<GameObject>("Emotes/xQcClap/VFX/ClapHandFX2.prefab")));
+            mapper.props[propIndex].transform.SetParent(mapper.basePlayerModelSMR[0].bones[3]);
+            mapper.props[propIndex].transform.localPosition = new Vector3(-.02f, -0.125f, .58f);
+
+
+            propIndex = mapper.props.Count;
+            mapper.props.Add(UnityEngine.Object.Instantiate(Assets.Load<GameObject>("Emotes/xQcClap/VFX/WorbleCylinder.prefab")));
+            mapper.props[propIndex].transform.SetParent(mapper.basePlayerModelSMR[0].bones[3]);
+            mapper.props[propIndex].transform.localPosition = new Vector3(-.02f, -0.125f, .58f);
+        }
+
         public void Setup(BoneMapper mapper, float time, string animation)
         {
             this.mapper = mapper;

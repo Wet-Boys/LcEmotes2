@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine.Playables;
 using UnityEngine;
+using System.Collections;
+using UnityEngine.Timeline;
 
 namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap
 {
@@ -24,6 +26,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap
                 syncAnim = false,
                 syncAudio = false,
                 customName = "xQc Clap",
+                displayName = "xQc Clap",
                 lockType = AnimationClipParams.LockType.lockHead,
                 willGetClaimedByDMCA = false,
                 thirdPerson = false,
@@ -41,6 +44,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap
             c.Setup(mapper, UnityEngine.Random.Range(3f,7f), "xQcYellAtSky");
             g.transform.SetParent(mapper.transform, false);
             mapper.props.Add(g);
+            c.StartCoroutine(c.SpawnClapFXAfterTime(2f, mapper));
         }
     }
 }

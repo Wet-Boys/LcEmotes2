@@ -24,6 +24,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap
                 syncAnim = false,
                 syncAudio = false,
                 customName = "",
+                displayName = "xQc Clap",
                 visible = false,
                 lockType = AnimationClipParams.LockType.headBobbing,
                 willGetClaimedByDMCA = false,
