@@ -3,6 +3,7 @@ using BepInEx.Logging;
 using LcEmotes2AndKnucklesFeaturingDante.Common;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain;
+using LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap;
 
 namespace LcEmotes2AndKnucklesFeaturingDante;
 
@@ -33,5 +34,9 @@ public class LcEmotes2AndKnucklesFeaturingDantePlugin : BaseUnityPlugin
     private void RegisterAllEmotes()
     {
         EmoteRegistry.RegisterEmote<GoblinPainEmote>();
+        EmoteRegistry.RegisterEmote<xQcEmote>();
+        EmoteRegistry.RegisterEmote<xQcEmote_yell>();
+        EmoteRegistry.RegisterEmote<xQcEmote_clap>();
+
     }
 }

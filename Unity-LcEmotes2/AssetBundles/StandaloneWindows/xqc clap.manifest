@@ -1,0 +1,57 @@
+ManifestFileVersion: 0
+CRC: 4097796326
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5bb2727ae695663cf6258cca80d893ff
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: aa769a4d337d1dfdb93b80cc35b021d4
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 5bb2727ae695663cf6258cca80d893ff
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: -1493852115, guid: 095de8da5eca6e9409b573f506a55a56, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Emotes/xQcClap/xqc_clap_start.anim
+- Assets/Emotes/xQcClap/VFX/ClapHandFX.prefab
+- Assets/Emotes/xQcClap/VFX/ClapHandFX2.prefab
+- Assets/Emotes/xQcClap/VFX/WorbleCylinder.prefab
+- Assets/Emotes/xQcClap/xqc_clap_loop.anim
+- Assets/Emotes/xQcClap/Audio/xqc_wow.ogg
+- Assets/Emotes/xQcClap/Audio/xqc_claploop.ogg
+- Assets/Emotes/xQcClap/Audio/ahhhh2.ogg
+- Assets/Emotes/xQcClap/VFX/ClapFX.prefab
+- Assets/Emotes/xQcClap/Audio/ahhhh3.ogg
+- Assets/Emotes/xQcClap/Animations/xQcYellAtSky.anim
+- Assets/Emotes/xQcClap/Audio/ahhhh4.ogg
+Dependencies: []

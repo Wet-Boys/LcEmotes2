@@ -2,6 +2,7 @@
 using System.Linq;
 using EmotesAPI;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain;
+using LethalEmotesAPI.ImportV2;
 
 namespace LcEmotes2AndKnucklesFeaturingDante.Emotes;
 
@@ -14,13 +15,13 @@ internal static class EmoteRegistry
         where T : AbstractEmote, new()
     {
         var emote = new T();
-        Emotes[emote.AnimationClipName] = emote;
+        Emotes[$"{LcEmotes2AndKnucklesFeaturingDantePlugin.ModGuid}__{emote.AnimationClipName}"] = emote;
     }
 
     public static void RegisterEmote<T>(T emoteInstance)
         where T : AbstractEmote
     {
-        Emotes[emoteInstance.AnimationClipName] = emoteInstance;
+        Emotes[$"{LcEmotes2AndKnucklesFeaturingDantePlugin.ModGuid}__{emoteInstance.AnimationClipName}"] = emoteInstance;
     }
 
     public static void FinalizeRegistry()
@@ -29,7 +30,7 @@ internal static class EmoteRegistry
             return;
 
         foreach (var (_, emote) in Emotes)
-            CustomEmotesAPI.AddCustomAnimation(emote.GetClipParams());
+            EmoteImporter.ImportEmote(emote.GetClipParams());
 
         CustomEmotesAPI.animChanged += OnSpawnWorldProps;
         _finished = true;
