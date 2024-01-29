@@ -49,7 +49,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap
         {
             this.mapper = mapper;
             this.time = time;
-            this.animation = animation;
+            this.animation = $"{LcEmotes2AndKnucklesFeaturingDantePlugin.ModGuid}__{animation}";
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using EmotesAPI;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain.Chat;
+using LethalEmotesAPI.ImportV2;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -11,17 +12,17 @@ public class GoblinPainEmote : AbstractEmote
 {
     public override string AnimationClipName => "Goblin Pain Emote Scav";
     
-    public override AnimationClipParams GetClipParams()
+    public override CustomEmoteParams GetClipParams()
     {
-        return new AnimationClipParams
+        return new CustomEmoteParams
         {
-            animationClip = [Assets.Load<AnimationClip>($"Emotes/GoblinPain/{AnimationClipName}.anim")],
-            _primaryAudioClips = [Assets.Load<AudioClip>("Emotes/GoblinPain/goblin-we-like-to-pain.ogg")],
-            _primaryDMCAFreeAudioClips = [Assets.Load<AudioClip>("Emotes/GoblinPain/goblin-we-like-to-pain.ogg")],
-            looping = true,
+            primaryAnimationClips = [Assets.Load<AnimationClip>($"Emotes/GoblinPain/{AnimationClipName}.anim")],
+            primaryAudioClips = [Assets.Load<AudioClip>("Emotes/GoblinPain/goblin-we-like-to-pain.ogg")],
+            primaryDMCAFreeAudioClips = [Assets.Load<AudioClip>("Emotes/GoblinPain/goblin-we-like-to-pain.ogg")],
+            audioLoops = true,
             syncAnim = true,
             syncAudio = true,
-            customName = "Pain",
+            displayName = "Pain",
             lockType = AnimationClipParams.LockType.headBobbing,
             willGetClaimedByDMCA = false,
             thirdPerson = true

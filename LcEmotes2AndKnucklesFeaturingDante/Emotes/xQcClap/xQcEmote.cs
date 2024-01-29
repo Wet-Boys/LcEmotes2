@@ -7,6 +7,7 @@ using UnityEngine.Playables;
 using UnityEngine;
 using System.Collections;
 using UnityEngine.Timeline;
+using LethalEmotesAPI.ImportV2;
 
 namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap
 {
@@ -14,18 +15,17 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap
     {
         public override string AnimationClipName => "xqc_clap_start";
 
-        public override AnimationClipParams GetClipParams()
+        public override CustomEmoteParams GetClipParams()
         {
-            return new AnimationClipParams
+            return new CustomEmoteParams
             {
-                animationClip = [Assets.Load<AnimationClip>($"Emotes/xQcClap/{AnimationClipName}.anim")],
-                secondaryAnimation = [Assets.Load<AnimationClip>($"Emotes/xQcClap/xqc_clap_loop.anim")],
-                _primaryAudioClips = [Assets.Load<AudioClip>("Emotes/xQcClap/Audio/xqc_wow.ogg")],
-                _secondaryAudioClips = [Assets.Load<AudioClip>("Emotes/xQcClap/Audio/xqc_claploop.ogg")],
-                looping = true,
+                primaryAnimationClips = [Assets.Load<AnimationClip>($"Emotes/xQcClap/{AnimationClipName}.anim")],
+                secondaryAnimationClips = [Assets.Load<AnimationClip>($"Emotes/xQcClap/xqc_clap_loop.anim")],
+                primaryAudioClips = [Assets.Load<AudioClip>("Emotes/xQcClap/Audio/xqc_wow.ogg")],
+                secondaryAudioClips = [Assets.Load<AudioClip>("Emotes/xQcClap/Audio/xqc_claploop.ogg")],
+                audioLoops = true,
                 syncAnim = false,
                 syncAudio = false,
-                customName = "xQc Clap",
                 displayName = "xQc Clap",
                 lockType = AnimationClipParams.LockType.lockHead,
                 willGetClaimedByDMCA = false,
