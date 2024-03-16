@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <Nullable>enable</Nullable>
+        <LangVersion>preview</LangVersion>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="BepInEx.Analyzers" Version="1.0.*">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="BepInEx.Core" Version="5.*" />
+        <PackageReference Include="UnityEngine.Modules" Version="2022.3.9" />
+        <PackageReference Include="Gemumoddo-LethalEmotesAPI" Version="1.3.2" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <AdditionalLibsDir Condition="'$(USE_STUBBED_LIBS)' == ''">..\.gameReferences\</AdditionalLibsDir>
+        <AdditionalLibsDir Condition="'$(USE_STUBBED_LIBS)' != ''">..\libs\</AdditionalLibsDir>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <AssemblyFiles Include="$(AdditionalLibsDir)*.dll" InProject="false" />
+        <Reference Include="@(AssemblyFiles)" Private="false" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="AssetBundles\**\*">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Emotes\NewFolder\" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 713142702
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3f45f74ef333fed2c617440f97758664
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4f83eafcb85d26b347625dd18247ce61
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 3f45f74ef333fed2c617440f97758664
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Emotes/Megaman/Megaman.anim
+- Assets/Emotes/Megaman/Megaman-mariogalaxy.ogg
+Dependencies: []

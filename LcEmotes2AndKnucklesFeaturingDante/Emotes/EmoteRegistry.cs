@@ -2,7 +2,10 @@
 using System.Linq;
 using EmotesAPI;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain;
+using LcEmotes2AndKnucklesFeaturingDante.JoinSpots;
 using LethalEmotesAPI.ImportV2;
+using UnityEngine;
+using UnityEngine.Timeline;
 
 namespace LcEmotes2AndKnucklesFeaturingDante.Emotes;
 
@@ -10,6 +13,8 @@ internal static class EmoteRegistry
 {
     private static bool _finished;
     private static readonly Dictionary<string, AbstractEmote> Emotes = [];
+    private static readonly Dictionary<string, AbstractJoinSpot> JoinSpots = [];
+
 
     public static void RegisterEmote<T>()
         where T : AbstractEmote, new()
@@ -24,6 +29,15 @@ internal static class EmoteRegistry
         Emotes[$"{LcEmotes2AndKnucklesFeaturingDantePlugin.ModGuid}__{emoteInstance.AnimationClipName}"] = emoteInstance;
     }
 
+    public static void RegiserProp(List<int> props, GameObject prop, JoinSpot[] joinSpots, AbstractJoinSpot[] joinSpotClasses)
+    {
+        props.Add(CustomEmotesAPI.RegisterWorldProp(prop, joinSpots));
+        for (int i = 0; i < joinSpots.Length; i++)
+        {
+            JoinSpots[joinSpots[i].name] = joinSpotClasses[i];
+        }
+    }
+
     public static void FinalizeRegistry()
     {
         if (_finished)
@@ -33,7 +47,16 @@ internal static class EmoteRegistry
             EmoteImporter.ImportEmote(emote.GetClipParams());
 
         CustomEmotesAPI.animChanged += OnSpawnWorldProps;
+        CustomEmotesAPI.emoteSpotJoined_Prop += OnJoinedWorldProp;
         _finished = true;
+    }
+
+    private static void OnJoinedWorldProp(GameObject emoteSpot, BoneMapper joiner, BoneMapper host)
+    {
+        if (!JoinSpots.TryGetValue(emoteSpot.name, out var emote))
+            return;
+
+        emote.OnSpotJoined(emoteSpot, joiner, host);
     }
 
     private static void OnSpawnWorldProps(string animName, BoneMapper mapper)
