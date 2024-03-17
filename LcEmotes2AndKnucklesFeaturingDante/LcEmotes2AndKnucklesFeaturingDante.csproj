@@ -11,7 +11,13 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+      <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.1">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
         <PackageReference Include="BepInEx.Core" Version="5.*" />
+        <PackageReference Include="BunyaPineTree-ModelReplacementAPI" Version="2.3.8" />
+        <PackageReference Include="Ooseykins-LethalVRM" Version="1.0.7" publicize="true" />
         <PackageReference Include="UnityEngine.Modules" Version="2022.3.9" />
         <PackageReference Include="Gemumoddo-LethalEmotesAPI" Version="1.3.2" />
     </ItemGroup>

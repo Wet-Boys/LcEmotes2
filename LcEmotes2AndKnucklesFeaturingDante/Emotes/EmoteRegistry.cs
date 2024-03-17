@@ -2,6 +2,8 @@
 using System.Linq;
 using EmotesAPI;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain;
+using LcEmotes2AndKnucklesFeaturingDante.Emotes.LightsCameraAction;
+using LcEmotes2AndKnucklesFeaturingDante.Emotes.Megaman;
 using LcEmotes2AndKnucklesFeaturingDante.JoinSpots;
 using LethalEmotesAPI.ImportV2;
 using UnityEngine;
@@ -70,7 +72,23 @@ internal static class EmoteRegistry
         {
             GoblinPainEmote.mappersPlayingPain.First().Value.gameObject.SetActive(true);
         }
-
+        if (LightsCameraActionEmote.flatMappers.Contains(mapper))
+        {
+            LightsCameraActionEmote.flatMappers.Remove(mapper);
+            mapper.basePlayerModelAnimator.gameObject.transform.localScale = new Vector3(mapper.basePlayerModelAnimator.gameObject.transform.localScale.x, mapper.basePlayerModelAnimator.gameObject.transform.localScale.x, mapper.basePlayerModelAnimator.gameObject.transform.localScale.z);
+            if (mapper.local)
+            {
+                CustomEmotesAPI.hudAnimator.transform.localScale = new Vector3(1, 1, 1);
+            }
+            if (CustomEmotesAPI.ModelReplacementAPIPresent && !mapper.isEnemy)
+            {
+                ModelReplacementAPICompat.ChangeModelScale(true, mapper.playerController);
+            }
+            if (CustomEmotesAPI.VRMPresent && !mapper.isEnemy)
+            {
+                LethalVRMCompat.ChangeModelScale(true, mapper.playerController);
+            }
+        }
 
 
         if (!Emotes.TryGetValue(animName, out var emote))
