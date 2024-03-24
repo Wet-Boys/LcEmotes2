@@ -1,4 +1,5 @@
 ﻿using BepInEx;
+using BepInEx.Bootstrap;
 using BepInEx.Logging;
 using LcEmotes2AndKnucklesFeaturingDante.Common;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes;
@@ -12,12 +13,14 @@ using UnityEngine;
 namespace LcEmotes2AndKnucklesFeaturingDante;
 
 [BepInDependency("com.weliveinasociety.CustomEmotesAPI")]
+[BepInDependency("flowerwater.liquidStainRemover", BepInDependency.DependencyFlags.SoftDependency)]
 [BepInPlugin(ModGuid, ModName, ModVersion)]
 public class LcEmotes2AndKnucklesFeaturingDantePlugin : BaseUnityPlugin
 {
     public const string ModGuid = "com.gemumoddo.lc_emotes2_and_knuckles_featuring_dante";
     public const string ModName = "Emotes 2 And Knuckles Featuring Dante";
-    public const string ModVersion = "1.0.0";
+    public const string ModVersion = "1.1.0";
+    public static bool watermarkRemoverPresent = false;
     public static PluginInfo? PluginInfo { get; private set; }
     public new static ManualLogSource? Logger { get; private set; }
 
@@ -25,7 +28,7 @@ public class LcEmotes2AndKnucklesFeaturingDantePlugin : BaseUnityPlugin
     {
         PluginInfo = Info;
         Logger = base.Logger;
-
+        watermarkRemoverPresent = Chainloader.PluginInfos.ContainsKey("flowerwater.liquidStainRemover");
         Assets.LoadAllAssetBundles();
 
         RegisterAllEmotes();
@@ -44,8 +47,8 @@ public class LcEmotes2AndKnucklesFeaturingDantePlugin : BaseUnityPlugin
         //EmoteRegistry.RegisterEmote<JermaWindow>();
         //EmoteRegistry.RegisterEmote<MegamanEmote>();
         EmoteRegistry.RegisterEmote<LightsCameraActionEmote>();
-        Assets.Load<GameObject>("Emotes/JermaWindow/Window5.prefab").AddComponent<WindowHandler>();
-        EmoteRegistry.RegiserProp(JermaWindow.props, Assets.Load<GameObject>("Emotes/JermaWindow/Window5.prefab"), [new JoinSpot("JermaWindowSpot", new Vector3(0, 0, 2))], [new JermaWindowJoinSpot()]);
+        //Assets.Load<GameObject>("Emotes/JermaWindow/Window5.prefab").AddComponent<WindowHandler>();
+        //EmoteRegistry.RegiserProp(JermaWindow.props, Assets.Load<GameObject>("Emotes/JermaWindow/Window5.prefab"), [new JoinSpot("JermaWindowSpot", new Vector3(0, 0, 2))], [new JermaWindowJoinSpot()]);
 
     }
 }

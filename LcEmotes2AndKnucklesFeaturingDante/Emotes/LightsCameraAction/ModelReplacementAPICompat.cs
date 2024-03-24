@@ -10,7 +10,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.LightsCameraAction
     internal class ModelReplacementAPICompat
     {
         internal static Dictionary<PlayerControllerB, BodyReplacementBase> playersToBodies = new Dictionary<PlayerControllerB, BodyReplacementBase>();
-        internal static void ChangeModelScale(bool makeNormal, PlayerControllerB player)
+        internal static GameObject ChangeModelScale(bool makeNormal, PlayerControllerB player)
         {
             BodyReplacementBase bod;
             ModelReplacementAPI.GetPlayerModelReplacement(player, out bod);
@@ -32,14 +32,20 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.LightsCameraAction
                     }
                     bod.replacementModel.transform.localScale = new Vector3(.001f, bod.replacementModel.transform.localScale.y, bod.replacementModel.transform.localScale.z);
                 }
+                return bod.replacementModel;
             }
+            return null;
         }
         internal static void UpdateModelRotation(PlayerControllerB player)
         {
             if (playersToBodies.ContainsKey(player))
             {
-                playersToBodies[player].replacementModel.transform.eulerAngles = player.transform.eulerAngles + new Vector3(0,90,0);
+                playersToBodies[player].replacementModel.transform.eulerAngles = player.transform.eulerAngles + new Vector3(0, 90, 0);
             }
+        }
+        internal static void RemovePlayerFromPool(PlayerControllerB player)
+        {
+            playersToBodies.Remove(player);
         }
     }
 }

@@ -49,7 +49,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.LightsCameraAction
             }
             return null;
         }
-        internal static void ChangeModelScale(bool makeNormal, PlayerControllerB player)
+        internal static GameObject ChangeModelScale(bool makeNormal, PlayerControllerB player)
         {
             LethalVRMInstance bod = PerformAllChecks(player);
             if (bod is not null)
@@ -70,7 +70,9 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.LightsCameraAction
                     }
                     bod.Vrm10Instance.transform.localScale = new Vector3(.001f, bod.Vrm10Instance.transform.localScale.y, bod.Vrm10Instance.transform.localScale.z);
                 }
+                return bod.Vrm10Instance.gameObject;
             }
+            return null;
         }
         internal static void UpdateModelRotation(PlayerControllerB player)
         {
@@ -79,6 +81,10 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.LightsCameraAction
             {
                 bod.Vrm10Instance.transform.eulerAngles = player.transform.eulerAngles + new Vector3(0, 90, 0);
             }
+        }
+        internal static void RemovePlayerFromPool(PlayerControllerB player)
+        {
+            LethalVRMCompat.playersToVRMInstances.Remove(player);
         }
     }
 }

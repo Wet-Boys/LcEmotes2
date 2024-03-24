@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.LightsCameraAction
 {
-    internal class CopyRotation : MonoBehaviour
+    internal class WatermarkComponent : MonoBehaviour
     {
         internal Transform target;
         internal Transform trackedBone;

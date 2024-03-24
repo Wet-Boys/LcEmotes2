@@ -27,11 +27,21 @@ internal static class HookUtils
     /// <summary>
     /// For static destination classes.
     /// </summary>
-    public static Hook NewHook<TTarget>(string targetMethodName, Type destType, string destMethodName)
+    public static Hook NewHook<TTarget>(string targetMethodName, Type destType, string destMethodName, bool isStatic)
     {
-        var targetMethod = typeof(TTarget).GetMethod(targetMethodName, DefaultFlags);
-        var destMethod = destType.GetMethod(destMethodName, StaticFlags);
+        if (isStatic)
+        {
+            var targetMethod = typeof(TTarget).GetMethod(targetMethodName, StaticFlags);
+            var destMethod = destType.GetMethod(destMethodName, StaticFlags);
 
-        return new Hook(targetMethod, destMethod);
+            return new Hook(targetMethod, destMethod);
+        }
+        else
+        {
+            var targetMethod = typeof(TTarget).GetMethod(targetMethodName, DefaultFlags);
+            var destMethod = destType.GetMethod(destMethodName, StaticFlags);
+
+            return new Hook(targetMethod, destMethod);
+        }
     }
 }
