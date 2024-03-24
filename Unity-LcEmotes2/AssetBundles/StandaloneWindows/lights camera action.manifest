@@ -1,0 +1,40 @@
+ManifestFileVersion: 0
+CRC: 4253310494
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5e7a70e07ed3d362cbf8e026a154d507
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 8f539c76208381ab08d8d40c25925864
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 5e7a70e07ed3d362cbf8e026a154d507
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Emotes/LightsCameraAction/LightsCameraActionLoop.anim
+- Assets/Emotes/LightsCameraAction/LightsCameraActionStart.anim
+- Assets/Emotes/LightsCameraAction/LightsCameraActionStart.ogg
+- Assets/Emotes/LightsCameraAction/LightsCameraActionLoop.ogg
+- Assets/Emotes/LightsCameraAction/Watermark.prefab
+Dependencies: []

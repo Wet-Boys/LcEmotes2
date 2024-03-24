@@ -1,5 +1,6 @@
 ﻿using EmotesAPI;
 using LethalEmotesAPI.ImportV2;
+using System.Collections.Generic;
 
 namespace LcEmotes2AndKnucklesFeaturingDante.Emotes;
 

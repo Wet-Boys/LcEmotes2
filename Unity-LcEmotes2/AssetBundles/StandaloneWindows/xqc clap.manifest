@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 4097796326
+CRC: 4265256359
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 5bb2727ae695663cf6258cca80d893ff
+    Hash: 136bed8109915ed93a3072bf30a3dec8
   TypeTreeHash:
     serializedVersion: 2
     Hash: aa769a4d337d1dfdb93b80cc35b021d4
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 5bb2727ae695663cf6258cca80d893ff
+    Hash: 136bed8109915ed93a3072bf30a3dec8
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -44,14 +44,23 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Emotes/xQcClap/xqc_clap_start.anim
 - Assets/Emotes/xQcClap/VFX/ClapHandFX.prefab
-- Assets/Emotes/xQcClap/VFX/ClapHandFX2.prefab
+- Assets/Emotes/xQcClap/Testing/avatartesting.anim
+- Assets/Emotes/xQcClap/Testing/Scene1.anim
 - Assets/Emotes/xQcClap/VFX/WorbleCylinder.prefab
 - Assets/Emotes/xQcClap/xqc_clap_loop.anim
 - Assets/Emotes/xQcClap/Audio/xqc_wow.ogg
+- Assets/Emotes/xQcClap/VFX/ClapHandFX2.prefab
+- Assets/Emotes/xQcClap/Testing/fuckitweball7.anim
 - Assets/Emotes/xQcClap/Audio/xqc_claploop.ogg
 - Assets/Emotes/xQcClap/Audio/ahhhh2.ogg
+- Assets/Emotes/xQcClap/Testing/fuckitweball.anim
 - Assets/Emotes/xQcClap/VFX/ClapFX.prefab
 - Assets/Emotes/xQcClap/Audio/ahhhh3.ogg
+- Assets/Emotes/xQcClap/Testing/fuckitweball2.anim
+- Assets/Emotes/xQcClap/Testing/fuckitweball5.anim
+- Assets/Emotes/xQcClap/Testing/fuckitweball4.anim
 - Assets/Emotes/xQcClap/Animations/xQcYellAtSky.anim
+- Assets/Emotes/xQcClap/Testing/bigsextest.anim
 - Assets/Emotes/xQcClap/Audio/ahhhh4.ogg
+- Assets/Emotes/xQcClap/Testing/fuckitweball3.anim
 Dependencies: []
