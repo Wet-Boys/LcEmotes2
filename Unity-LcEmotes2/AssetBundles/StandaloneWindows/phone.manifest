@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 4116814311
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e87af142b9d1533e10db16483c8a7ea3
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5941c3541d8b403f80e37b0d697371e8
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: e87af142b9d1533e10db16483c8a7ea3
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Emotes/BoringAhhGame/phone_loop.anim
+- Assets/Emotes/BoringAhhGame/phone_start.anim
+Dependencies: []
