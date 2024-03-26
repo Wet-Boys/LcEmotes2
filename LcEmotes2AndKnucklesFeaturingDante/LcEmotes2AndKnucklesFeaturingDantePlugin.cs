@@ -44,6 +44,7 @@ public class LcEmotes2AndKnucklesFeaturingDantePlugin : BaseUnityPlugin
         EmoteRegistry.RegisterEmote<xQcEmote>();
         EmoteRegistry.RegisterEmote<xQcEmote_yell>();
         EmoteRegistry.RegisterEmote<xQcEmote_clap>();
+        EmoteRegistry.RegisterEmote<LuckyStar>();
         //EmoteRegistry.RegisterEmote<JermaWindow>();
         //EmoteRegistry.RegisterEmote<MegamanEmote>();
         EmoteRegistry.RegisterEmote<LightsCameraActionEmote>();

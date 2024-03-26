@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 991220485
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c7fb7333721b9aef700ec0c644d8149e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4f83eafcb85d26b347625dd18247ce61
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: c7fb7333721b9aef700ec0c644d8149e
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Emotes/Lucky Star/luckystar.ogg
+- Assets/Emotes/Lucky Star/testDance.anim
+Dependencies: []
