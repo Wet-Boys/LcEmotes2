@@ -58,6 +58,7 @@ public class LightsCameraActionEmote : AbstractEmote
             if (mapper.local)
             {
                 CustomEmotesAPI.hudAnimator.transform.localScale = new Vector3(1, .001f, 1);
+                mapper.transform.localScale = new Vector3(mapper.transform.localScale.x, mapper.transform.localScale.y, mapper.transform.localScale.x * .001f);
             }
         }
         mapper.StartCoroutine(FinishPropAfterFrame(mapper));

@@ -79,6 +79,7 @@ internal static class EmoteRegistry
             if (mapper.local)
             {
                 CustomEmotesAPI.hudAnimator.transform.localScale = new Vector3(1, 1, 1);
+                mapper.transform.localScale = new Vector3(mapper.transform.localScale.x, mapper.transform.localScale.y, mapper.transform.localScale.x);
             }
             if (CustomEmotesAPI.ModelReplacementAPIPresent && !mapper.isEnemy)
             {
