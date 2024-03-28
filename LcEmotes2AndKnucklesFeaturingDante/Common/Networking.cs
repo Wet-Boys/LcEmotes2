@@ -18,16 +18,22 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Common
             instance = this;
         }
         [ClientRpc]
-        public void SyncRandomVideoToClientsRpc(ulong netId, int randomNumber)
+        public void SyncRandomVideoToClientRpc(ulong netId, int randomNumber, int randomEasterEgg, int useEasterEgg)
         {
-            Debug.Log($"got a clientRPC from Emotes2 ================");
             GameObject bodyObject = GetNetworkObject(netId).gameObject;
             foreach (var item in BoneMapper.playersToMappers[bodyObject].props)
             {
                 VideoPlayer videoPlayer = item.GetComponentInChildren<VideoPlayer>();
                 if (videoPlayer is not null)
                 {
-                    videoPlayer.clip = PhoneEmote.videoClips[randomNumber];
+                    if (useEasterEgg < 5)
+                    {
+                        videoPlayer.clip = PhoneEmote.easterEggVideoClips[randomEasterEgg];
+                    }
+                    else
+                    {
+                        videoPlayer.clip = PhoneEmote.videoClips[randomNumber];
+                    }
                     videoPlayer.Play();
                 }
             }

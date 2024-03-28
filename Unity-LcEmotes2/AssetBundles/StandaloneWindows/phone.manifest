@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 816258318
+CRC: 686434111
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ae2de2e12af20c54393d6e4a05932547
+    Hash: fa8a40e05cf5274542546ef3ab2d1581
   TypeTreeHash:
     serializedVersion: 2
-    Hash: da170fcf7cc6c6da3bc93421dbc876a4
+    Hash: 41588c2985b380b8c18e35f99917c5ca
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: ae2de2e12af20c54393d6e4a05932547
+    Hash: fa8a40e05cf5274542546ef3ab2d1581
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -19,6 +19,8 @@ ClassTypes:
 - Class: 21
   Script: {instanceID: 0}
 - Class: 23
+  Script: {instanceID: 0}
+- Class: 28
   Script: {instanceID: 0}
 - Class: 33
   Script: {instanceID: 0}
@@ -34,9 +36,13 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Emotes/BoringAhhGame/Minecraft.mp4
+- Assets/Emotes/BoringAhhGame/FamilyGuy.mp4
+- Assets/Emotes/BoringAhhGame/Satisfying.mp4
+- Assets/Emotes/BoringAhhGame/MinecraftParkour.mp4
 - Assets/Emotes/BoringAhhGame/phone_loop.anim
-- Assets/Emotes/BoringAhhGame/SubwaySurfers.mov
+- Assets/Emotes/BoringAhhGame/BadShrekle.mp4
+- Assets/Emotes/BoringAhhGame/GreyLeno.mp4
+- Assets/Emotes/BoringAhhGame/SubwaySurfers.mp4
 - Assets/Emotes/BoringAhhGame/iphone4.prefab
 - Assets/Emotes/BoringAhhGame/phone_start.anim
 Dependencies: []
