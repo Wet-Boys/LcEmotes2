@@ -20,6 +20,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Common
         [ClientRpc]
         public void SyncRandomVideoToClientsRpc(ulong netId, int randomNumber)
         {
+            Debug.Log($"================== received RPC");
             GameObject bodyObject = GetNetworkObject(netId).gameObject;
             foreach (var item in BoneMapper.playersToMappers[bodyObject].props)
             {
