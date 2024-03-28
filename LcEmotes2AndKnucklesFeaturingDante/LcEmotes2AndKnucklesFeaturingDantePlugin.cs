@@ -1,6 +1,7 @@
 ﻿using BepInEx;
 using BepInEx.Bootstrap;
 using BepInEx.Logging;
+using GameNetcodeStuff;
 using LcEmotes2AndKnucklesFeaturingDante.Common;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain;
@@ -8,6 +9,9 @@ using LcEmotes2AndKnucklesFeaturingDante.Emotes.JermaWindow;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.Megaman;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap;
 using LcEmotes2AndKnucklesFeaturingDante.JoinSpots.JermaWindow;
+using MonoMod.RuntimeDetour;
+using System;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace LcEmotes2AndKnucklesFeaturingDante;
@@ -24,6 +28,7 @@ public class LcEmotes2AndKnucklesFeaturingDantePlugin : BaseUnityPlugin
     public static PluginInfo? PluginInfo { get; private set; }
     public new static ManualLogSource? Logger { get; private set; }
 
+
     private void Awake()
     {
         PluginInfo = Info;
@@ -36,6 +41,15 @@ public class LcEmotes2AndKnucklesFeaturingDantePlugin : BaseUnityPlugin
         EmoteRegistry.FinalizeRegistry();
         
         GameEventBus.InitHooks();
+
+
+        //var targetMethod = typeof(PlayerControllerB).GetMethod("Start", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        //var destMethod = typeof(LcEmotes2AndKnucklesFeaturingDantePlugin).GetMethod(nameof(PlayerControllerStart), System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        //playerControllerStartHook = new Hook(targetMethod, destMethod, this);
+
+        //targetMethod = typeof(GameNetworkManager).GetMethod("Start", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        //destMethod = typeof(LcEmotes2AndKnucklesFeaturingDantePlugin).GetMethod(nameof(NetworkManagerStart), System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        //networkManagerStartHook = new Hook(targetMethod, destMethod, this);
     }
 
     private void RegisterAllEmotes()

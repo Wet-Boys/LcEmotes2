@@ -1,21 +1,42 @@
 ManifestFileVersion: 0
-CRC: 4116814311
+CRC: 816258318
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e87af142b9d1533e10db16483c8a7ea3
+    Hash: ae2de2e12af20c54393d6e4a05932547
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 5941c3541d8b403f80e37b0d697371e8
+    Hash: da170fcf7cc6c6da3bc93421dbc876a4
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: e87af142b9d1533e10db16483c8a7ea3
+    Hash: ae2de2e12af20c54393d6e4a05932547
 HashAppended: 0
 ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
 - Class: 74
+  Script: {instanceID: 0}
+- Class: 328
+  Script: {instanceID: 0}
+- Class: 329
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/Emotes/BoringAhhGame/Minecraft.mp4
 - Assets/Emotes/BoringAhhGame/phone_loop.anim
+- Assets/Emotes/BoringAhhGame/SubwaySurfers.mov
+- Assets/Emotes/BoringAhhGame/iphone4.prefab
 - Assets/Emotes/BoringAhhGame/phone_start.anim
 Dependencies: []

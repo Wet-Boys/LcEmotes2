@@ -5,6 +5,8 @@ using LcEmotes2AndKnucklesFeaturingDante.Emotes.LightsCameraAction;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.Megaman;
 using LcEmotes2AndKnucklesFeaturingDante.Utils;
 using MonoMod.RuntimeDetour;
+using Unity.Netcode;
+using UnityEngine;
 
 namespace LcEmotes2AndKnucklesFeaturingDante.Common;
 
@@ -16,10 +18,18 @@ internal static class GameEventBus
             typeof(GameEventBus), nameof(RadiationWarningHUD), false);
         _switchSuitForPlayerHook = HookUtils.NewHook<UnlockableSuit>(nameof(UnlockableSuit.SwitchSuitForPlayer),
             typeof(GameEventBus), nameof(SwitchSuitForPlayer), true);
+
+        _radiationWarningHUDHook = HookUtils.NewHook<PlayerControllerB>("Start",
+            typeof(GameEventBus), nameof(PlayerControllerStart), false);
+        _switchSuitForPlayerHook = HookUtils.NewHook<GameNetworkManager>("Start",
+            typeof(GameEventBus), nameof(NetworkManagerStart), false);
     }
 
     private static Hook? _radiationWarningHUDHook;
     private static Hook? _switchSuitForPlayerHook;
+    private static Hook? networkManagerStartHook;
+    private static Hook? playerControllerStartHook;
+
 
     public static event Action? OnRadiationWarningHUD;
     private static void RadiationWarningHUD(Action<HUDManager> orig, HUDManager self)
@@ -46,5 +56,30 @@ internal static class GameEventBus
                 BoneMapper.playersToMappers[player.gameObject].StartCoroutine(LightsCameraActionEmote.FinishPropAfterFrame(BoneMapper.playersToMappers[player.gameObject]));
             }
         }
+    }
+    private static GameObject emotes2networker;
+    private static void PlayerControllerStart(Action<PlayerControllerB> orig, PlayerControllerB self)
+    {
+        orig(self);
+        if (self.IsServer && Emotes2Networking.instance == null)
+        {
+            GameObject networker = UnityEngine.Object.Instantiate<GameObject>(emotes2networker);
+            networker.GetComponent<NetworkObject>().Spawn(true);
+        }
+    }
+    private static void NetworkManagerStart(Action<GameNetworkManager> orig, GameNetworkManager self)
+    {
+        try
+        {
+            emotes2networker = Assets.Load<GameObject>($"assets/emotes/networkerlmao.prefab");
+
+            emotes2networker.AddComponent<Emotes2Networking>();
+            GameNetworkManager.Instance.GetComponent<NetworkManager>().PrefabHandler.AddNetworkPrefab(emotes2networker);
+        }
+        catch (Exception e)
+        {
+            DebugClass.Log($"couldn't setup emotes2 networker");
+        }
+        orig(self);
     }
 }
