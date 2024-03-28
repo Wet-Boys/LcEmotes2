@@ -11,6 +11,7 @@ using LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap;
 using LcEmotes2AndKnucklesFeaturingDante.JoinSpots.JermaWindow;
 using MonoMod.RuntimeDetour;
 using System;
+using System.Reflection;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -43,13 +44,25 @@ public class LcEmotes2AndKnucklesFeaturingDantePlugin : BaseUnityPlugin
         GameEventBus.InitHooks();
 
 
-        //var targetMethod = typeof(PlayerControllerB).GetMethod("Start", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        //var destMethod = typeof(LcEmotes2AndKnucklesFeaturingDantePlugin).GetMethod(nameof(PlayerControllerStart), System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        //playerControllerStartHook = new Hook(targetMethod, destMethod, this);
-
-        //targetMethod = typeof(GameNetworkManager).GetMethod("Start", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        //destMethod = typeof(LcEmotes2AndKnucklesFeaturingDantePlugin).GetMethod(nameof(NetworkManagerStart), System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        //networkManagerStartHook = new Hook(targetMethod, destMethod, this);
+        var types = Assembly.GetExecutingAssembly().GetTypes();
+        foreach (var type in types)
+        {
+            try
+            {
+                var methods = type.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static);
+                foreach (var method in methods)
+                {
+                    var attributes = method.GetCustomAttributes(typeof(RuntimeInitializeOnLoadMethodAttribute), false);
+                    if (attributes.Length > 0)
+                    {
+                        method.Invoke(null, null);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+            }
+        }
     }
 
     private void RegisterAllEmotes()
