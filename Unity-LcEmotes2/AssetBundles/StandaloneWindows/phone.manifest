@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 686434111
+CRC: 2776813260
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: fa8a40e05cf5274542546ef3ab2d1581
+    Hash: c45d1c20d99fda2deb845bb516d96a6b
   TypeTreeHash:
     serializedVersion: 2
     Hash: 41588c2985b380b8c18e35f99917c5ca
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: fa8a40e05cf5274542546ef3ab2d1581
+    Hash: c45d1c20d99fda2deb845bb516d96a6b
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -36,12 +36,20 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/Emotes/BoringAhhGame/octagon.webm
 - Assets/Emotes/BoringAhhGame/FamilyGuy.mp4
 - Assets/Emotes/BoringAhhGame/Satisfying.mp4
-- Assets/Emotes/BoringAhhGame/MinecraftParkour.mp4
+- Assets/Emotes/BoringAhhGame/True.mp4
+- Assets/Emotes/BoringAhhGame/kitchengun.webm
+- Assets/Emotes/BoringAhhGame/oldspice.webm
+- Assets/Emotes/BoringAhhGame/GreyLeno.webm
+- Assets/Emotes/BoringAhhGame/KoopaCape.mp4
 - Assets/Emotes/BoringAhhGame/phone_loop.anim
-- Assets/Emotes/BoringAhhGame/BadShrekle.mp4
-- Assets/Emotes/BoringAhhGame/GreyLeno.mp4
+- Assets/Emotes/BoringAhhGame/Megaman.mp4
+- Assets/Emotes/BoringAhhGame/SliceIt.webm
+- Assets/Emotes/BoringAhhGame/MinecraftParkour.webm
+- Assets/Emotes/BoringAhhGame/BadShrekle.webm
+- Assets/Emotes/BoringAhhGame/Lifesaver.webm
 - Assets/Emotes/BoringAhhGame/SubwaySurfers.mp4
 - Assets/Emotes/BoringAhhGame/iphone4.prefab
 - Assets/Emotes/BoringAhhGame/phone_start.anim

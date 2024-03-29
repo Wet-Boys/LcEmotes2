@@ -19,8 +19,8 @@ public class PhoneEmote : AbstractEmote
 {
     public override string AnimationClipName => "phone_start";
     internal static List<BoneMapper> flatMappers = new List<BoneMapper>();
-    internal static List<VideoClip> videoClips = [Assets.Load<VideoClip>($"Emotes/BoringAhhGame/SubwaySurfers.mp4"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/MinecraftParkour.mp4"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/FamilyGuy.mp4"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/Satisfying.mp4")];
-    internal static List<VideoClip> easterEggVideoClips = [Assets.Load<VideoClip>($"Emotes/BoringAhhGame/BadShrekle.mp4"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/GreyLeno.mp4")];
+    internal static List<VideoClip> videoClips = [Assets.Load<VideoClip>($"Emotes/BoringAhhGame/SubwaySurfers.mp4"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/MinecraftParkour.webm"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/FamilyGuy.mp4"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/Satisfying.mp4"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/SliceIt.webm")];
+    internal static List<VideoClip> easterEggVideoClips = [Assets.Load<VideoClip>($"Emotes/BoringAhhGame/BadShrekle.webm"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/GreyLeno.webm"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/KoopaCape.mp4"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/Lifesaver.webm"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/Megaman.mp4"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/True.mp4"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/oldspice.webm"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/octagon.webm"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/kitchengun.webm")];
     public override CustomEmoteParams GetClipParams()
     {
         return new CustomEmoteParams
@@ -54,7 +54,7 @@ public class PhoneEmote : AbstractEmote
 
         if (CustomEmotesAPI.localMapper.isServer)
         {
-            Emotes2Networking.instance.SyncRandomVideoToClientRpc(mapper.mapperBody.GetComponent<NetworkObject>().NetworkObjectId, UnityEngine.Random.Range(0,videoClips.Count), UnityEngine.Random.Range(0, easterEggVideoClips.Count), UnityEngine.Random.Range(0, 100));
+            Emotes2Networking.instance.SyncRandomVideoToClientRpc(mapper.mapperBody.GetComponent<NetworkObject>().NetworkObjectId, UnityEngine.Random.Range(0,videoClips.Count), UnityEngine.Random.Range(0, easterEggVideoClips.Count), UnityEngine.Random.Range(0, 100), UnityEngine.Random.Range(0f,1f));
         }
         //network to clients if server
     }
