@@ -1,0 +1,26 @@
+ManifestFileVersion: 0
+CRC: 701371317
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0ac29e334eca4f2e5f46897233c65a00
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c71c7407f71a4e67048c735ee291eb09
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 0ac29e334eca4f2e5f46897233c65a00
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: -2006330137, guid: 138b4eb11884c8b175831866fa6e3bff, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Emotes/networkerlmao.prefab
+Dependencies: []

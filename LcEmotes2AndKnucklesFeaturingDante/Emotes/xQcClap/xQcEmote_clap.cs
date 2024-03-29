@@ -36,6 +36,14 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap
 
         public override void SpawnProps(BoneMapper mapper)
         {
+            if (mapper.prevClipName != $"{LcEmotes2AndKnucklesFeaturingDantePlugin.ModGuid}__xQcYellAtSky")
+            {
+                if (CustomEmotesAPI.localMapper.isServer)
+                {
+                    CustomEmotesAPI.PlayAnimation($"{LcEmotes2AndKnucklesFeaturingDantePlugin.ModGuid}__xqc_clap_start", mapper);
+                }
+                return;
+            }
             GameObject g = new GameObject();
             ClapHandler c = g.AddComponent<ClapHandler>();
             float time;
