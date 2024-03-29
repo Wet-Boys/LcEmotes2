@@ -2,6 +2,8 @@
 using LcEmotes2AndKnucklesFeaturingDante.Common;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain.Chat;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.LightsCameraAction;
+using LcEmotes2AndKnucklesFeaturingDante.Emotes.Phone;
+using LethalEmotesAPI.Core;
 using LethalEmotesAPI.ImportV2;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,7 +22,7 @@ public class PhoneEmote : AbstractEmote
     public override string AnimationClipName => "phone_start";
     internal static List<BoneMapper> flatMappers = new List<BoneMapper>();
     internal static List<VideoClip> videoClips = [Assets.Load<VideoClip>($"Emotes/BoringAhhGame/SubwaySurfers.mp4"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/MinecraftParkour.webm"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/FamilyGuy.mp4"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/Satisfying.mp4"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/SliceIt.webm")];
-    internal static List<VideoClip> easterEggVideoClips = [Assets.Load<VideoClip>($"Emotes/BoringAhhGame/BadShrekle.webm"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/GreyLeno.webm"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/KoopaCape.mp4"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/Lifesaver.webm"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/Megaman.mp4"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/True.mp4"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/oldspice.webm"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/octagon.webm"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/kitchengun.webm")];
+    internal static List<VideoClip> easterEggVideoClips = [Assets.Load<VideoClip>($"Emotes/BoringAhhGame/BadShrekle.webm"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/GreyLeno.webm"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/KoopaCape.mp4"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/Lifesaver.mp4"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/Megaman.mp4"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/True.mp4"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/oldspice.webm"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/octagon.webm"), Assets.Load<VideoClip>($"Emotes/BoringAhhGame/kitchengun.webm")];
     public override CustomEmoteParams GetClipParams()
     {
         return new CustomEmoteParams
@@ -39,12 +41,10 @@ public class PhoneEmote : AbstractEmote
         var propIndex = mapper.props.Count;
         mapper.props.Add(Object.Instantiate(Assets.Load<GameObject>("Emotes/BoringAhhGame/iphone4.prefab")));
         GameObject prop = mapper.props[propIndex];
-        foreach (var item in mapper.basePlayerModelSMR[0].bones)
+        BoneRef boneRef = mapper.emoteSkeletonAnimator.GetBoneTransform(HumanBodyBones.LeftHand).GetComponent<BoneRef>();
+        if (boneRef is not null)
         {
-            if (item.GetComponent<EmoteConstraint>() is not null && item.GetComponent<EmoteConstraint>().emoteBone == mapper.emoteSkeletonAnimator.GetBoneTransform(HumanBodyBones.LeftHand))
-            {
-                prop.transform.parent = item;
-            }
+            prop.transform.parent = boneRef.target;
         }
         prop.transform.localEulerAngles = new Vector3(1, 90, 255);
         prop.transform.localPosition = new Vector3(-0.0127f, 0.0964f, -0.0436f);
@@ -54,9 +54,25 @@ public class PhoneEmote : AbstractEmote
 
         if (CustomEmotesAPI.localMapper.isServer)
         {
-            Emotes2Networking.instance.SyncRandomVideoToClientRpc(mapper.mapperBody.GetComponent<NetworkObject>().NetworkObjectId, UnityEngine.Random.Range(0,videoClips.Count), UnityEngine.Random.Range(0, easterEggVideoClips.Count), UnityEngine.Random.Range(0, 100), UnityEngine.Random.Range(0f,1f));
+            Emotes2Networking.instance.SyncRandomVideoToClientRpc(mapper.mapperBody.GetComponent<NetworkObject>().NetworkObjectId, UnityEngine.Random.Range(0, videoClips.Count), UnityEngine.Random.Range(0, easterEggVideoClips.Count), UnityEngine.Random.Range(0, 100), UnityEngine.Random.Range(0f, 1f));
         }
-        //network to clients if server
+        //look into this later?
+        //if (mapper.local && mapper.isValidPlayer)
+        //{
+        //    Transform shoulder = mapper.playerController.thisPlayerModelArms.bones[1];
+        //    if (shoulder.name != "shoulder.R") //WHY >:L
+        //    {
+        //        foreach (var item in mapper.playerController.thisPlayerModelArms.bones)
+        //        {
+        //            if (item.name == "shoulder.R")
+        //            {
+        //                shoulder = item;
+        //                break;
+        //            }
+        //        }
+        //    }
+        //    prop.AddComponent<ArmFixer>().Setup(mapper.emoteSkeletonAnimator.GetBoneTransform(HumanBodyBones.LeftShoulder).GetComponent<BoneRef>().target, shoulder);
+        //}
     }
     IEnumerator stopDoingThat(BoneMapper mapper)
     {
