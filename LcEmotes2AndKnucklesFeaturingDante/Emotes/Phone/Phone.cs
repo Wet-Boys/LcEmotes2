@@ -52,7 +52,6 @@ public class PhoneEmote : AbstractEmote
         }
         else
         {
-            DebugClass.Log($"got a target");
             prop.transform.parent = target;
         }
         prop.transform.localEulerAngles = new Vector3(1, 90, 255);
