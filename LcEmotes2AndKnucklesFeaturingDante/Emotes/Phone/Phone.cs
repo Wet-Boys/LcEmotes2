@@ -41,10 +41,19 @@ public class PhoneEmote : AbstractEmote
         var propIndex = mapper.props.Count;
         mapper.props.Add(Object.Instantiate(Assets.Load<GameObject>("Emotes/BoringAhhGame/iphone4.prefab")));
         GameObject prop = mapper.props[propIndex];
-        BoneRef boneRef = mapper.emoteSkeletonAnimator.GetBoneTransform(HumanBodyBones.LeftHand).GetComponent<BoneRef>();
-        if (boneRef is not null)
+        Transform target = mapper.mapperBody.transform.Find($"ScavengerModel/metarig/spine/spine.001/spine.002/spine.003/shoulder.L/arm.L_upper/arm.L_lower/hand.L");
+        if (target is null)
         {
-            prop.transform.parent = boneRef.target;
+            BoneRef boneRef = mapper.emoteSkeletonAnimator.GetBoneTransform(HumanBodyBones.LeftHand).GetComponent<BoneRef>();
+            if (boneRef is not null)
+            {
+                prop.transform.parent = boneRef.target;
+            }
+        }
+        else
+        {
+            DebugClass.Log($"got a target");
+            prop.transform.parent = target;
         }
         prop.transform.localEulerAngles = new Vector3(1, 90, 255);
         prop.transform.localPosition = new Vector3(-0.0127f, 0.0964f, -0.0436f);

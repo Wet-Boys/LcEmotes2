@@ -26,7 +26,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Common
                 VideoPlayer videoPlayer = item.GetComponentInChildren<VideoPlayer>();
                 if (videoPlayer is not null)
                 {
-                    if (useEasterEgg < 600)
+                    if (useEasterEgg < 6)
                     {
                         videoPlayer.clip = PhoneEmote.easterEggVideoClips[randomEasterEgg];
                     }
