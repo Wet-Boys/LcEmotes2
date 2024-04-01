@@ -55,7 +55,7 @@ public class LightsCameraActionEmote : AbstractEmote
         if (!flatMappers.Contains(mapper))
         {
             flatMappers.Add(mapper);
-            if (mapper.local)
+            if (mapper.local && CustomEmotesAPI.hudAnimator is not null)
             {
                 CustomEmotesAPI.hudAnimator.transform.localScale = new Vector3(1, .001f, 1);
             }

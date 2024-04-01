@@ -76,11 +76,11 @@ internal static class EmoteRegistry
         {
             LightsCameraActionEmote.flatMappers.Remove(mapper);
             mapper.basePlayerModelAnimator.gameObject.transform.localScale = new Vector3(mapper.basePlayerModelAnimator.gameObject.transform.localScale.x, mapper.basePlayerModelAnimator.gameObject.transform.localScale.x, mapper.basePlayerModelAnimator.gameObject.transform.localScale.z);
-            if (mapper.local)
+            if (mapper.local && CustomEmotesAPI.hudAnimator is not null)
             {
                 CustomEmotesAPI.hudAnimator.transform.localScale = new Vector3(1, 1, 1);
-                mapper.transform.localScale = new Vector3(mapper.transform.localScale.x, mapper.transform.localScale.y, mapper.transform.localScale.x);
             }
+            mapper.transform.localScale = new Vector3(mapper.transform.localScale.x, mapper.transform.localScale.y, mapper.transform.localScale.x);
             if (CustomEmotesAPI.ModelReplacementAPIPresent && !mapper.isEnemy)
             {
                 ModelReplacementAPICompat.ChangeModelScale(true, mapper.playerController);
