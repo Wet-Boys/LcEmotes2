@@ -1,0 +1,40 @@
+ManifestFileVersion: 0
+CRC: 2085766289
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 10ef3384603d3e374db489efa3fc3aeb
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: eb2432ea3bded475c3031aff183b2cae
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 10ef3384603d3e374db489efa3fc3aeb
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Emotes/PropHunt/theHouseThatJohnBuilt.ogg
+- Assets/Emotes/PropHunt/houseLikeCarpet.ogg
+- Assets/Emotes/PropHunt/move_into_floor_start.anim
+- Assets/Emotes/PropHunt/Cube.prefab
+- Assets/Emotes/PropHunt/move_into_floor_loop.anim
+Dependencies: []

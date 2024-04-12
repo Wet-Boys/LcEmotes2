@@ -75,6 +75,7 @@ public class LcEmotes2AndKnucklesFeaturingDantePlugin : BaseUnityPlugin
         //EmoteRegistry.RegisterEmote<MegamanEmote>();
         EmoteRegistry.RegisterEmote<LightsCameraActionEmote>();
         EmoteRegistry.RegisterEmote<PhoneEmote>();
+        EmoteRegistry.RegisterEmote<PropHunt>();
         //Assets.Load<GameObject>("Emotes/JermaWindow/Window5.prefab").AddComponent<WindowHandler>();
         //EmoteRegistry.RegiserProp(JermaWindow.props, Assets.Load<GameObject>("Emotes/JermaWindow/Window5.prefab"), [new JoinSpot("JermaWindowSpot", new Vector3(0, 0, 2))], [new JermaWindowJoinSpot()]);
 
