@@ -34,7 +34,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.JoinSpots.JermaWindow
             joiner.personalAudioSource.GetComponent<AudioManager>().Stop();
             windowAudioSource.Play();
         }
-        IEnumerator SpawnBrokenGlass(float delay, Transform hostPosition, BoneMapper owner)
+        internal static IEnumerator SpawnBrokenGlass(float delay, Transform hostPosition, BoneMapper owner)
         {
             yield return new WaitForSeconds(delay);
             if (owner is not null && owner.currentClipName.Equals($"{LcEmotes2AndKnucklesFeaturingDantePlugin.ModGuid}__Window1"))
@@ -58,7 +58,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.JoinSpots.JermaWindow
             owner.StartCoroutine(CleanupExplosion(g2));
             GameObject.Destroy(hostPosition.gameObject);
         }
-        IEnumerator CleanupExplosion(GameObject g)
+        internal static IEnumerator CleanupExplosion(GameObject g)
         {
             yield return new WaitForSeconds(3);
             UnityEngine.Object.Destroy(g);

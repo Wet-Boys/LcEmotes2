@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 1364675265
+CRC: 3157189088
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 849d5d8afeac3dd8a2651ccaddeac84d
+    Hash: b0765d13293887932124c59bb80cffe1
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 86487391045f1cf6703e2d898d684b49
+    Hash: bbc185287e08768b9068b2fbf1462ff0
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 849d5d8afeac3dd8a2651ccaddeac84d
+    Hash: b0765d13293887932124c59bb80cffe1
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -27,6 +27,8 @@ ClassTypes:
 - Class: 43
   Script: {instanceID: 0}
 - Class: 48
+  Script: {instanceID: 0}
+- Class: 65
   Script: {instanceID: 0}
 - Class: 74
   Script: {instanceID: 0}
@@ -51,9 +53,10 @@ Assets:
 - Assets/Emotes/JermaWindow/Window1Land.anim
 - Assets/Emotes/JermaWindow/explosion.ogg
 - Assets/Emotes/JermaWindow/Shatter1.ogg
-- Assets/Emotes/JermaWindow/Shatter2.ogg
+- Assets/Emotes/JermaWindow/Shatter6.ogg
 - Assets/Emotes/JermaWindow/Window9.prefab
 - Assets/Emotes/JermaWindow/Shatter3.ogg
+- Assets/Emotes/JermaWindow/Shatter2.ogg
 - Assets/Emotes/JermaWindow/WindowShatter.prefab
 - Assets/Emotes/JermaWindow/Explosion.prefab
 - Assets/Emotes/JermaWindow/Shatter5.ogg

@@ -20,17 +20,14 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.JermaWindow
             {
                 if (wasFalling)
                 {
-                    DebugClass.Log($"was falling and now landing");
                     mapper.PlayAnim($"{LcEmotes2AndKnucklesFeaturingDantePlugin.ModGuid}__Window1Land", -1);
                 }
             }
             else 
             {
-                DebugClass.Log($"falling");
 
                 if (!wasFalling)
                 {
-                    DebugClass.Log($"need to play falling animation");
 
                     mapper.preserveProps = true;
                     mapper.PlayAnim($"{LcEmotes2AndKnucklesFeaturingDantePlugin.ModGuid}__falling", -1);
