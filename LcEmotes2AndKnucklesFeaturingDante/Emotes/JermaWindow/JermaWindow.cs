@@ -22,7 +22,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.JermaWindow
             return new CustomEmoteParams
             {
                 internalName = "jermaWindow",
-                displayName = "jermaWindow"
+                displayName = "Jerma Window"
             };
         }
 
@@ -43,6 +43,10 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.JermaWindow
                 g.transform.eulerAngles = mapper.mapperBody.transform.eulerAngles + new Vector3(0, 180, 0);
                 g.GetComponent<WindowHandler>().owner = mapper;
                 g.GetComponent<NetworkObject>().Spawn();
+                if (mapper.mapperBodyTransform.parent.name == "HangarShip")
+                {
+                    g.transform.SetParent(mapper.mapperBodyTransform.parent);
+                }
             }
         }
     }

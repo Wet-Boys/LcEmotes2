@@ -47,7 +47,6 @@ internal static class EmoteRegistry
 
         foreach (var (_, emote) in Emotes)
             EmoteImporter.ImportEmote(emote.GetClipParams());
-
         CustomEmotesAPI.animChanged += OnSpawnWorldProps;
         CustomEmotesAPI.emoteSpotJoined_Prop += OnJoinedWorldProp;
         _finished = true;
