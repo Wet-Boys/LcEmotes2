@@ -29,7 +29,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <AssemblyFiles Include="$(AdditionalLibsDir)*.dll" InProject="false" />
+        <AssemblyFiles Include="$(AdditionalLibsDir)*.dll" InProject="false" publicize="true"/>
         <Reference Include="@(AssemblyFiles)" Private="false" />
     </ItemGroup>
 

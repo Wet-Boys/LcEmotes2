@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 2652794515
+CRC: 3157189088
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e2b89d7fd766bb4b61d508a7f54b3a3e
+    Hash: b0765d13293887932124c59bb80cffe1
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 7c93407dbbbb5ab91009134ab343634e
+    Hash: bbc185287e08768b9068b2fbf1462ff0
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: e2b89d7fd766bb4b61d508a7f54b3a3e
+    Hash: b0765d13293887932124c59bb80cffe1
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -20,17 +20,47 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 23
   Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
 - Class: 33
   Script: {instanceID: 0}
 - Class: 43
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
 - Class: 74
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 213
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Emotes/JermaWindow/Window1.anim
+- Assets/Emotes/JermaWindow/falling.anim
+- Assets/Emotes/JermaWindow/Window1Land.anim
+- Assets/Emotes/JermaWindow/explosion.ogg
+- Assets/Emotes/JermaWindow/Shatter1.ogg
+- Assets/Emotes/JermaWindow/Shatter6.ogg
+- Assets/Emotes/JermaWindow/Window9.prefab
+- Assets/Emotes/JermaWindow/Shatter3.ogg
+- Assets/Emotes/JermaWindow/Shatter2.ogg
+- Assets/Emotes/JermaWindow/WindowShatter.prefab
+- Assets/Emotes/JermaWindow/Explosion.prefab
+- Assets/Emotes/JermaWindow/Shatter5.ogg
 - Assets/Emotes/JermaWindow/Window2.anim
-- Assets/Emotes/JermaWindow/Window5.prefab
+- Assets/Emotes/JermaWindow/Shatter4.ogg
+- Assets/Emotes/JermaWindow/Window1Jump.anim
 Dependencies: []

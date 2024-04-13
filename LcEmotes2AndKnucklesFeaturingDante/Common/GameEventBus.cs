@@ -1,6 +1,7 @@
 ﻿using System;
 using EmotesAPI;
 using GameNetcodeStuff;
+using LcEmotes2AndKnucklesFeaturingDante.Emotes.JermaWindow;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.LightsCameraAction;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.Megaman;
 using LcEmotes2AndKnucklesFeaturingDante.Utils;
@@ -23,12 +24,16 @@ internal static class GameEventBus
             typeof(GameEventBus), nameof(PlayerControllerStart), false);
         _switchSuitForPlayerHook = HookUtils.NewHook<GameNetworkManager>("Start",
             typeof(GameEventBus), nameof(NetworkManagerStart), false);
+
+        shootGunHook = HookUtils.NewHook<ShotgunItem>("ShootGun",
+            typeof(GameEventBus), nameof(ShootGun), false);
     }
 
     private static Hook? _radiationWarningHUDHook;
     private static Hook? _switchSuitForPlayerHook;
     private static Hook? networkManagerStartHook;
     private static Hook? playerControllerStartHook;
+    private static Hook? shootGunHook;
 
 
     public static event Action? OnRadiationWarningHUD;
@@ -81,5 +86,22 @@ internal static class GameEventBus
             DebugClass.Log($"couldn't setup emotes2 networker");
         }
         orig(self);
+    }
+    private static void ShootGun(Action<ShotgunItem, Vector3, Vector3> orig, ShotgunItem self, Vector3 shotgunPosition, Vector3 shotgunForward)
+    {
+        orig(self, shotgunPosition, shotgunForward);
+        try
+        {
+            foreach (var item in self.enemyColliders)
+            {
+                if (item.transform is not null && item.transform.name == "Window9(Clone)")
+                {
+                    item.transform.GetComponent<WindowHandler>().OnHit();
+                }
+            }
+        }
+        catch (Exception)
+        {
+        }
     }
 }
