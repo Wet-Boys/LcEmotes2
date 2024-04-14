@@ -1,4 +1,6 @@
-﻿using GameNetcodeStuff;
+﻿using EmotesAPI;
+using GameNetcodeStuff;
+using LcEmotes2AndKnucklesFeaturingDante.Emotes.JermaWindow;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.Megaman;
 using System;
 using System.Collections.Generic;
@@ -53,6 +55,29 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Common
                     }
                 }
             }
+        }
+
+        public void SyncGlassBreak(ulong netId)
+        {
+            if (CustomEmotesAPI.localMapper.isServer)
+            {
+                SyncGlassBreakToClientRpc(netId);
+            }
+            else
+            {
+                SyncGlassBreakToServerRpc(netId);
+            }
+        }
+        [ClientRpc]
+        public void SyncGlassBreakToClientRpc(ulong netId)
+        {
+            GameObject window = GetNetworkObject(netId).gameObject;
+            window.GetComponent<WindowHandler>().BreakGlass();
+        }
+        [ServerRpc(RequireOwnership = false)]
+        public void SyncGlassBreakToServerRpc(ulong netId)
+        {
+            SyncGlassBreakToClientRpc(netId);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.JoinSpots.JermaWindow
         {
             joiner.mapperBodyTransform.position = emoteSpot.transform.position;
             joiner.mapperBodyTransform.rotation = emoteSpot.transform.rotation;
-            joiner.mapperBodyTransform.localEulerAngles += new Vector3(0,180,0);
+            joiner.mapperBodyTransform.localEulerAngles += new Vector3(0, 180, 0);
             joiner.PlayAnim($"{LcEmotes2AndKnucklesFeaturingDantePlugin.ModGuid}__Window1", -1);
             if (joiner.playerController is not null && joiner.local)
             {
@@ -23,16 +23,19 @@ namespace LcEmotes2AndKnucklesFeaturingDante.JoinSpots.JermaWindow
                 joiner.props.Add(g);
                 g.AddComponent<CameraLocker>().cam = joiner.playerController.gameplayCamera;
             }
-            host.StartCoroutine(SpawnBrokenGlass(.6166f, host.transform, joiner));
+            joiner.StartCoroutine(SpawnBrokenGlass(.6166f, host.transform, joiner));
 
             EmoteLocation emoteLocation = emoteSpot.GetComponent<EmoteLocation>();
             emoteLocation.SetEmoterAndHideLocation(joiner);
             emoteLocation.gameObject.transform.localPosition -= new Vector3(5000, 5000, 5000);
             host.GetComponent<WindowHandler>().owner = null;
-            AudioSource windowAudioSource = host.transform.Find("Base").GetComponent<AudioSource>();
-            windowAudioSource.clip = joiner.personalAudioSource.clip;
-            joiner.personalAudioSource.GetComponent<AudioManager>().Stop();
-            windowAudioSource.Play();
+            if (!joiner.currentClipName.Equals($"{LcEmotes2AndKnucklesFeaturingDantePlugin.ModGuid}__Window1"))
+            {
+                AudioSource windowAudioSource = host.transform.Find("Base").GetComponent<AudioSource>();
+                windowAudioSource.clip = joiner.personalAudioSource.clip;
+                joiner.personalAudioSource.GetComponent<AudioManager>().Stop();
+                windowAudioSource.Play();
+            }
         }
         internal static IEnumerator SpawnBrokenGlass(float delay, Transform hostPosition, BoneMapper owner)
         {
@@ -48,15 +51,19 @@ namespace LcEmotes2AndKnucklesFeaturingDante.JoinSpots.JermaWindow
                 hostPosition.Find("XBeam").gameObject.SetActive(false);
                 hostPosition.Find("ZBeam").gameObject.SetActive(false);
             }
-            yield return new WaitForSeconds(5 - delay);
             GameObject g2 = UnityEngine.Object.Instantiate(Assets.Load<GameObject>("Emotes/JermaWindow/Explosion.prefab"));
             g2.transform.SetParent(hostPosition);
-            g2.transform.localPosition = new Vector3(0,1.33f,0);
-            g2.transform.localScale = new Vector3(5,5,5);
+            g2.transform.localPosition = new Vector3(0, 1.33f, 0);
+            g2.transform.localScale = new Vector3(5, 5, 5);
             g2.transform.SetParent(g2.transform.parent.parent);
+            yield return new WaitForSeconds(5 - delay);
+            CustomEmotesAPI.localMapper.StartCoroutine(CleanupExplosion(g2));
             g2.GetComponent<ParticleSystem>().Emit(1);
-            owner.StartCoroutine(CleanupExplosion(g2));
-            GameObject.Destroy(hostPosition.gameObject);
+            g2.GetComponent<AudioSource>().Play();
+            if (CustomEmotesAPI.localMapper.isServer)
+            {
+                GameObject.Destroy(hostPosition.gameObject);
+            }
         }
         internal static IEnumerator CleanupExplosion(GameObject g)
         {
