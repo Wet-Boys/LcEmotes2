@@ -32,7 +32,8 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap
                 rootBonesToIgnore = [HumanBodyBones.RightUpperLeg, HumanBodyBones.LeftUpperLeg],
                 soloBonesToIgnore = [HumanBodyBones.Hips, HumanBodyBones.Spine, HumanBodyBones.Head],
                 useLocalTransforms = true,
-                audioLevel = 1
+                audioLevel = 1,
+                emoteToPlayOnJoin = $"{LcEmotes2AndKnucklesFeaturingDantePlugin.ModGuid}__xqc_clap_start"
             };
         }
 

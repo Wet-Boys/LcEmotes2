@@ -18,7 +18,7 @@
         <PackageReference Include="BepInEx.Core" Version="5.*" />
         <PackageReference Include="BunyaPineTree-ModelReplacementAPI" Version="2.3.8" />
         <PackageReference Include="FlowerWater-WatermarkRemover" Version="1.2.3" />
-        <PackageReference Include="Gemumoddo.LethalCompany.LethalEmotesAPI" Version="1.7.3" />
+        <PackageReference Include="Gemumoddo.LethalCompany.LethalEmotesAPI" Version="1.10.0" />
         <PackageReference Include="Ooseykins-LethalVRM" Version="1.0.7" publicize="true" />
         <PackageReference Include="UnityEngine.Modules" Version="2022.3.9" />
     </ItemGroup>
@@ -29,7 +29,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <AssemblyFiles Include="$(AdditionalLibsDir)*.dll" InProject="false" publicize="true"/>
+        <AssemblyFiles Include="$(AdditionalLibsDir)*.dll" InProject="false" publicize="true" />
         <Reference Include="@(AssemblyFiles)" Private="false" />
     </ItemGroup>
 
