@@ -1,0 +1,38 @@
+ManifestFileVersion: 0
+CRC: 1455810932
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 277b8a7e6901970f9d5a0d38d42def26
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 592afde34d15f54fb95757fe577c0a2f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 277b8a7e6901970f9d5a0d38d42def26
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Emotes/Hover/HoverLoop.anim
+- Assets/Emotes/Hover/HoverStart.anim
+- Assets/Emotes/Hover/HoverLoop1Ball.prefab
+Dependencies: []

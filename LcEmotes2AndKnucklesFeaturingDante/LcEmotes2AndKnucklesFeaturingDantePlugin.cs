@@ -5,6 +5,7 @@ using GameNetcodeStuff;
 using LcEmotes2AndKnucklesFeaturingDante.Common;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain;
+using LcEmotes2AndKnucklesFeaturingDante.Emotes.HoverEmote;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.JermaWindow;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.Megaman;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap;
@@ -78,6 +79,7 @@ public class LcEmotes2AndKnucklesFeaturingDantePlugin : BaseUnityPlugin
         EmoteRegistry.RegisterEmote<JermaWindowJump>();
         EmoteRegistry.RegisterEmote<JermaWindowLand>();
         EmoteRegistry.RegisterEmote<JermaWindowFall>();
+        EmoteRegistry.RegisterEmote<HoverEmote>();
         Assets.Load<GameObject>("Emotes/JermaWindow/Window9.prefab").AddComponent<WindowHandler>();
         EmoteRegistry.RegiserProp(JermaWindow.props, Assets.Load<GameObject>("Emotes/JermaWindow/Window9.prefab"), [new JoinSpot("JermaWindowSpot", new Vector3(0, 0, 2.5f))], [new JermaWindowJoinSpot()]);
 
