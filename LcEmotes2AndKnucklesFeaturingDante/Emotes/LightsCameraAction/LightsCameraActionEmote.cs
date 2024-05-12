@@ -52,16 +52,21 @@ public class LightsCameraActionEmote : AbstractEmote
     }
     public override void SpawnProps(BoneMapper mapper)
     {
-        if (!flatMappers.Contains(mapper))
+        mapper.StartCoroutine(FlattenAfterFrame(mapper));
+    }
+    IEnumerator FlattenAfterFrame(BoneMapper mapper)
+    {
+        yield return new WaitForEndOfFrame();
+        GameObject g = new GameObject();
+        mapper.props.Add(g);
+        g.AddComponent<UnFlattener>().mapper = mapper;
+        if (mapper.local && CustomEmotesAPI.hudAnimator is not null)
         {
-            flatMappers.Add(mapper);
-            if (mapper.local && CustomEmotesAPI.hudAnimator is not null)
-            {
-                CustomEmotesAPI.hudAnimator.transform.localScale = new Vector3(1, .001f, 1);
-            }
-            mapper.transform.localScale = new Vector3(mapper.transform.localScale.x, mapper.transform.localScale.y, mapper.transform.localScale.x * .001f);
+            CustomEmotesAPI.hudAnimator.transform.localScale = new Vector3(1, .001f, 1);
         }
+        mapper.transform.localScale = new Vector3(mapper.transform.localScale.x, mapper.transform.localScale.y, mapper.transform.localScale.x * .001f);
         mapper.StartCoroutine(FinishPropAfterFrame(mapper));
+
         if (!(LcEmotes2AndKnucklesFeaturingDantePlugin.watermarkRemoverPresent && WatermarkCompaty.CantHaveWatermark()))
         {
             var propIndex = mapper.props.Count;
