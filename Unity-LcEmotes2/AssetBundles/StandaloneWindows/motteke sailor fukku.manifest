@@ -1,0 +1,63 @@
+ManifestFileVersion: 0
+CRC: 2096740968
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6c5d095c92b1b8dc574ea037430e9c80
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 22a12652538e3ff73fdc8d2f4fe4ce58
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 6c5d095c92b1b8dc574ea037430e9c80
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: -2006330137, guid: 138b4eb11884c8b175831866fa6e3bff, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0997643438057254c98e228266a7890f, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Emotes/Lucky Star/FinalDances/luckystarDance7.anim
+- Assets/Emotes/Lucky Star/Pom Poms/JiggleSettings.asset
+- Assets/Emotes/Lucky Star/FinalDances/luckystarDance9.anim
+- Assets/Emotes/Lucky Star/FinalDances/luckystarDance4.anim
+- Assets/Emotes/Lucky Star/FinalDances/luckystarDance1.anim
+- Assets/Emotes/Lucky Star/FinalDances/luckystarDance8.anim
+- Assets/Emotes/Lucky Star/FinalDances/luckystarDance6.anim
+- Assets/Emotes/Lucky Star/Pom Poms/pom pom test 3.prefab
+- Assets/Emotes/Lucky Star/FinalDances/luckystarDance3.anim
+- Assets/Emotes/Lucky Star/Stage.prefab
+- Assets/Emotes/Lucky Star/luckystar.ogg
+- Assets/Emotes/Lucky Star/FinalDances/luckystarDance10.anim
+- Assets/Emotes/Lucky Star/FinalDances/luckystarDance2.anim
+- Assets/Emotes/Lucky Star/FinalDances/luckystarDance5.anim
+Dependencies: []

@@ -3,7 +3,9 @@
     "Assembly-CSharp.dll",
     "Unity.TextMeshPro.dll",
     "Unity.Timeline.dll",
-    "Unity.Netcode.Runtime.dll"
+    "Unity.Netcode.Runtime.dll",
+    "Unity.InputSystem.dll"
+
   ],
   "AssetBundles": [
     "we like the pain",
@@ -12,7 +14,8 @@
     "megaman",
     "lights camera action",
     "phone",
-    "networkerlmao"
+    "networkerlmao",
+    "motteke sailor fukku"
   ],
   "ProjectFile": "./LcEmotes2AndKnucklesFeaturingDante/LcEmotes2AndKnucklesFeaturingDante.csproj",
   "UnityDir": "./Unity-LcEmotes2/",

@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using EmotesAPI;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.LightsCameraAction;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.Megaman;
+using LcEmotes2AndKnucklesFeaturingDante.Emotes.MottekeSailorFukku;
 using LcEmotes2AndKnucklesFeaturingDante.JoinSpots;
 using LethalEmotesAPI.ImportV2;
 using UnityEngine;
