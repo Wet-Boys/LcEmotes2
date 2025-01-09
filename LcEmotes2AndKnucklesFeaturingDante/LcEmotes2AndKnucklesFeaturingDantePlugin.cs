@@ -7,8 +7,10 @@ using LcEmotes2AndKnucklesFeaturingDante.Emotes;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.GoblinPain;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.JermaWindow;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.Megaman;
+using LcEmotes2AndKnucklesFeaturingDante.Emotes.MottekeSailorFukku;
 using LcEmotes2AndKnucklesFeaturingDante.Emotes.xQcClap;
 using LcEmotes2AndKnucklesFeaturingDante.JoinSpots.JermaWindow;
+using LcEmotes2AndKnucklesFeaturingDante.JoinSpots.MottekeSailorFukku;
 using MonoMod.RuntimeDetour;
 using System;
 using System.Reflection;
@@ -40,7 +42,8 @@ public class LcEmotes2AndKnucklesFeaturingDantePlugin : BaseUnityPlugin
         RegisterAllEmotes();
         
         EmoteRegistry.FinalizeRegistry();
-        
+
+        FixSyncPositions();
         GameEventBus.InitHooks();
 
 
@@ -78,8 +81,28 @@ public class LcEmotes2AndKnucklesFeaturingDantePlugin : BaseUnityPlugin
         EmoteRegistry.RegisterEmote<JermaWindowJump>();
         EmoteRegistry.RegisterEmote<JermaWindowLand>();
         EmoteRegistry.RegisterEmote<JermaWindowFall>();
+        EmoteRegistry.RegisterEmote<MottekeSailorFukkuEmote>();//1
+        EmoteRegistry.RegisterEmote<MottekeSailorFukkuEmote2>();//2
+        EmoteRegistry.RegisterEmote<MottekeSailorFukkuEmote3>();//3
+        EmoteRegistry.RegisterEmote<MottekeSailorFukkuEmote4>();//4
+        EmoteRegistry.RegisterEmote<MottekeSailorFukkuEmote5>();//5
+        EmoteRegistry.RegisterEmote<MottekeSailorFukkuEmote6>();//6
+        EmoteRegistry.RegisterEmote<MottekeSailorFukkuEmote7>();//7
+        EmoteRegistry.RegisterEmote<MottekeSailorFukkuEmote8>();//8
+        EmoteRegistry.RegisterEmote<MottekeSailorFukkuEmote9>();//9
+        EmoteRegistry.RegisterEmote<MottekeSailorFukkuEmote10>();//10
+        EmoteRegistry.RegisterEmote<MottekeSailorFukkuStage>();
         Assets.Load<GameObject>("Emotes/JermaWindow/Window9.prefab").AddComponent<WindowHandler>();
+        Assets.Load<GameObject>("Emotes/Lucky Star/Stage.prefab").AddComponent<StageHandler>();
         EmoteRegistry.RegiserProp(JermaWindow.props, Assets.Load<GameObject>("Emotes/JermaWindow/Window9.prefab"), [new JoinSpot("JermaWindowSpot", new Vector3(0, 0, 2.5f))], [new JermaWindowJoinSpot()]);
+        EmoteRegistry.RegiserProp(MottekeSailorFukkuStage.props, Assets.Load<GameObject>("Emotes/Lucky Star/Stage.prefab"), [new JoinSpot("DanceStageJoinSpot", new Vector3(0, 0, 2.75f))], [new MottekeSailorFukkuJoinSpot()]);
 
+    }
+    private void FixSyncPositions()
+    {
+        for (int i = 1; i < 10; i++)
+        {
+            BoneMapper.animClips[$"{ModGuid}__luckystarDance{i + 1}"].syncPos = BoneMapper.animClips[$"{ModGuid}__luckystarDance1"].syncPos;
+        }
     }
 }
