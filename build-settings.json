@@ -4,7 +4,8 @@
     "Unity.TextMeshPro.dll",
     "Unity.Timeline.dll",
     "Unity.Netcode.Runtime.dll",
-    "Unity.InputSystem.dll"
+    "Unity.InputSystem.dll",
+    "Unity.RenderPipelines.Core.Runtime.dll"
 
   ],
   "AssetBundles": [

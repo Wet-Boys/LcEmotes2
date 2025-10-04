@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
-using UnityEngine.Rendering.HighDefinition;
+// using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.Rendering;
 using UnityEngine.Timeline;
 using Emotes2JigglePhysics;
@@ -68,11 +68,12 @@ namespace LcEmotes2AndKnucklesFeaturingDante.JoinSpots.MottekeSailorFukku
             if (joiner.local)
             {
                 DanceFreeCam.instance.active = true;
-                DepthOfField depthOfField;
-                if (HUDManager.Instance.playerGraphicsVolume.sharedProfile.TryGet<DepthOfField>(out depthOfField))
-                {
-                    depthOfField.nearFocusEnd.SetValue(new MinFloatParameter(.05f, 0f, true));
-                }
+                HUDManager.Instance.SetNearDepthOfFieldEnabled(false);
+                // DepthOfField depthOfField;
+                // if (HUDManager.Instance.playerGraphicsVolume.sharedProfile.TryGet<DepthOfField>(out depthOfField))
+                // {
+                //     depthOfField.nearFocusEnd.SetValue(new MinFloatParameter(.05f, 0f, true));
+                // }
                 MottekeSailorFukkuStage.stageAudio.spatialBlend = 0;
                 EmoteLocation yote = emoteSpot.GetComponent<EmoteLocation>();
                 try

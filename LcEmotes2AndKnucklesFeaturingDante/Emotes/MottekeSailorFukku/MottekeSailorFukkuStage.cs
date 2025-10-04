@@ -10,7 +10,6 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Rendering;
-using UnityEngine.Rendering.HighDefinition;
 
 namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.MottekeSailorFukku;
 

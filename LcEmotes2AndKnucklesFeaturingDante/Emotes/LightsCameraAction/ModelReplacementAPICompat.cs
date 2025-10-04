@@ -9,7 +9,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.LightsCameraAction
 {
     internal class ModelReplacementAPICompat
     {
-        internal static Dictionary<PlayerControllerB, BodyReplacementBase> playersToBodies = new Dictionary<PlayerControllerB, BodyReplacementBase>();
+        internal static Dictionary<PlayerControllerB, object> playersToBodies = new();
         internal static GameObject ChangeModelScale(bool makeNormal, PlayerControllerB player)
         {
             BodyReplacementBase bod;
@@ -22,7 +22,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.LightsCameraAction
                     {
                         playersToBodies.Remove(player);
                     }
-                    bod.replacementModel.transform.localScale = new Vector3(bod.replacementModel.transform.localScale.z, bod.replacementModel.transform.localScale.y, bod.replacementModel.transform.localScale.z);
+                    bod.replacementModel.transform.localScale = new Vector3(bod.replacementModel.transform.localScale.x, bod.replacementModel.transform.localScale.z, bod.replacementModel.transform.localScale.z);
                 }
                 else
                 {
@@ -30,7 +30,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.LightsCameraAction
                     {
                         playersToBodies.Add(player, bod);
                     }
-                    bod.replacementModel.transform.localScale = new Vector3(.001f, bod.replacementModel.transform.localScale.y, bod.replacementModel.transform.localScale.z);
+                    bod.replacementModel.transform.localScale = new Vector3(bod.replacementModel.transform.localScale.x, .001f, bod.replacementModel.transform.localScale.z);
                 }
                 return bod.replacementModel;
             }
@@ -40,7 +40,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.LightsCameraAction
         {
             if (playersToBodies.ContainsKey(player))
             {
-                playersToBodies[player].replacementModel.transform.eulerAngles = player.transform.eulerAngles + new Vector3(0, 90, 0);
+                ((BodyReplacementBase)playersToBodies[player]).replacementModel.transform.eulerAngles = player.transform.eulerAngles + new Vector3(0, 90, 0);
             }
         }
         internal static void RemovePlayerFromPool(PlayerControllerB player)

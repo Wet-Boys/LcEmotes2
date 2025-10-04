@@ -10,16 +10,16 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.LightsCameraAction
 {
     internal class LethalVRMCompat
     {
-        internal static Dictionary<PlayerControllerB, LethalVRMInstance> playersToVRMInstances = new Dictionary<PlayerControllerB, LethalVRMInstance>();
+        internal static Dictionary<PlayerControllerB, object> playersToVRMInstances = new();
 
-        internal static LethalVRMManager iWantToSeeYourManager;
+        internal static GameObject iWantToSeeYourManager;
         internal static void SetManager()
         {
             if (iWantToSeeYourManager is null)
             {
                 foreach (var item in Resources.FindObjectsOfTypeAll(typeof(LethalVRMManager)) as LethalVRMManager[])
                 {
-                    iWantToSeeYourManager = item;
+                    iWantToSeeYourManager = item.gameObject;
                 }
             }
         }
@@ -29,7 +29,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.LightsCameraAction
             {
                 if (!playersToVRMInstances.ContainsKey(player))
                 {
-                    foreach (var item in iWantToSeeYourManager.instances)
+                    foreach (var item in iWantToSeeYourManager.GetComponent<LethalVRMManager>().instances)
                     {
                         if (item.PlayerControllerB == player)
                         {
@@ -45,7 +45,7 @@ namespace LcEmotes2AndKnucklesFeaturingDante.Emotes.LightsCameraAction
             GetPlayerInDictionary(player);
             if (playersToVRMInstances.ContainsKey(player))
             {
-                return playersToVRMInstances[player];
+                return (LethalVRMInstance)playersToVRMInstances[player];
             }
             return null;
         }
